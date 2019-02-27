@@ -1,2 +1,2 @@
 # oldies
-Een school project
+A school project.
