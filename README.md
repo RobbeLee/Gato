@@ -1,2 +1,2 @@
-# oldies
+# Gato
 A school project.
