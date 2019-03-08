@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, Arial;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    text-decoration: none;
+}
+
+button, input[type="button"] {
+    border: none;
+    cursor: pointer;
+}
+
+html, body {
+    width: 100%;
+    background: #fff;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    height: 65px;
+    background: rgba(255,255,255,0.9);
+    box-shadow: 0 0 10px -5px #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    z-index: 9999;
+}
+
+    .nav__left-container, .nav__right-container {
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        padding: 0 40px;
+    }
+
+        .nav__title {
+            font-size: 40px;
+            text-transform: uppercase;
+            font-weight: 700;
+            cursor: default;
+            padding: 0 20px 0 0;
+            margin-right: 10px;
+            position: relative;
+        }
+
+        .nav__title::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 80%;
+            background: rgba(0,0,0,0.2);
+        }
+
+        .nav__link {
+            font-size: 18px;
+            font-weight: 500;
+            text-transform: uppercase;
+            color: #000;
+            padding: 0 10px;
+            position: relative;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .nav__link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            width: 80%;
+            height: 4px;
+            background: #6600ee;
+            transform: translateY(4px);
+            transition: transform 200ms ease;
+        }
+
+        .nav__link:hover::after {
+            transform: translateY(0);
+        }
+
+        .nav__form {
+            height: 35px;
+            width: 270px;
+            position: relative;
+            margin-right: 40px;
+        }
+
+        .nav__input {
+            width: 100%;
+            height: 100%;
+            padding: 0 45px 0 10px;
+            border-radius: 12px;
+            border: 1px solid rgba(0,0,0,0.2);
+            color: #000;
+            font-size: 18px;
+        }
+
+        .nav__search-btn {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            background: #fff;
+            width: 30px;
+            height: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 50;
+            border-left: 1px solid rgba(0,0,0,0.2);
+        }
+
+        .nav__search-btn svg, .nav__search-btn path {
+            width: 20px;
+            height: 20px;
+            fill: transparent;
+            stroke-width: 1px;
+            stroke: rgba(0,0,0,0.2);
+        }
+
+        .nav__btn {
+            width: 50px;
+            height: 50px;
+            background: transparent;
+            position: relative;
+            margin-right: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav__btn svg, .nav__btn path {
+            width: 30px;
+            height: 30px;
+            fill: rgba(0,0,0,0.4);
+            background: transparent;
+            z-index: 50;
+            transition: fill 150ms ease;
+        }
+
+        .nav__btn:hover svg path {
+            fill: rgba(0,0,0,0.6);
+        }
+
+        .nav__btn::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.2);
+            border-radius: 50%;
+            transform-origin: center;
+            transform: scale(0);
+            transition: transform 150ms ease;
+            z-index: 20;
+        }
+
+        .nav__btn:focus::after {
+            transform: scale(1);
+        }
+        
+        .nav__pfp-container {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            border-radius: 50%;
+            margin-left: 30px;
+        }
+
+        .nav__pfp {
+            width: 100%;
+            height: auto;
+        }
