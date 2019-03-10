@@ -1,0 +1,46 @@
+#div__container__tekst {
+    font-family: 'Roboto';
+    font-size: 22px;
+}
+
+#body__container__logo {
+    width: 14%;
+}
+
+#container {
+    text-align: center;
+    border-style: solid;
+    border-radius: 12px;
+    border-width: 1px;
+    padding: 20px;
+    margin: 30px 30px;
+}
+
+input[type=text] {
+    border: none;
+    font-size: 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.200);
+    padding: 50px 10px 20px;
+    width: 508px;
+    display: flex;
+    flex-direction: column;
+    color: #707070;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.button {
+    background-color: #6600EE;
+    border-radius: 12px;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    padding: 25px 125px;
+    font-size: 24px;
+  }
