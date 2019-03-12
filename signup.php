@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <?php require 'include/meta.php'; ?>
     <title>Gato</title>
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/signup.css" />
-    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
 </head>
 <body>
     <div id="container">
-            <img src="assets/pictures/hop_github_logo.svg" alt="logo" id="body__container__logo">
+            <img src="assets/images/logo/hop_github_logo.svg" alt="logo" id="body__container__logo">
         <div id="div__container__tekst">
             <h1>Registration</h1>
         </div>

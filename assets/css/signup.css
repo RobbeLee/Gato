@@ -1,5 +1,4 @@
 #div__container__tekst {
-    font-family: 'Roboto';
     font-size: 22px;
 }
 
@@ -9,22 +8,19 @@
 
 #container {
     text-align: center;
-    border-style: solid;
-    border-radius: 12px;
-    border-width: 1px;
-    padding: 20px;
-    margin: 30px 30px;
 }
 
 input[type=text] {
     border: none;
-    font-size: 15px;
+    font-size: 24px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.200);
-    padding: 50px 10px 20px;
-    width: 508px;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 80%;
+    max-width: 400px;
     display: flex;
     flex-direction: column;
-    color: #707070;
+    color: #000;
 }
 
 form {
@@ -41,6 +37,6 @@ form {
     color: white;
     text-align: center;
     cursor: pointer;
-    padding: 25px 125px;
+    padding: 20px 90px;
     font-size: 24px;
   }
