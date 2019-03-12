@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- "Matthijs" ik heb de signup.php verbeterd, nu moet het alleen nog aan een database gekoppeld worden. -->
 <html>
 <head>
     <?php require 'include/meta.php'; ?>
