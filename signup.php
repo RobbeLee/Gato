@@ -22,7 +22,9 @@
             <input type="text" name="password" placeholder="Password" class="div__container__info">
         </form>
         <!--<input type="button" class="button" value="Register"> -->
-        <button class="button" type="submit" name="submit">Register</button>
-    </div>
+        <form action="http://localhost:8888/GitHub/Gato/">
+        <button class="button" type="submit" name="submit" >Register</button>
+  </form> 
+   </div>
 </body>
 </html>
