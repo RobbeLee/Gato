@@ -29,3 +29,5 @@ if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
 } else {
     $ip=$_SERVER['REMOTE_ADDR'];
 }
+
+date_default_timezone_set('Europe/Amsterdam');
