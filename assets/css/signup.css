@@ -1,5 +1,6 @@
 #div__container__tekst {
     font-size: 22px;
+    padding-top: 30px;
 }
 
 #body__container__logo {
@@ -40,3 +41,11 @@ form {
     padding: 20px 90px;
     font-size: 24px;
   }
+
+  #div__container__registration{
+      padding-top: 30px;
+  }
+
+a{
+    color: #6600EE; 
+}
