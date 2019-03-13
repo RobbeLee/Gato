@@ -23,7 +23,7 @@
         </form>
         <!--<input type="button" class="button" value="Register"> -->
         <form action="http://localhost:8888/GitHub/Gato/">
-        <button class="button" type="submit" name="submit" >Register</button>
+        <button class="button" type="submit" name="submit" >REGISTER</button>
   </form> 
    </div>
 </body>

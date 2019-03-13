@@ -20,10 +20,13 @@
         </form>
         <!--<input type="button" class="button" value="Register"> -->
         <form action="http://localhost:8888/GitHub/Gato/">
-        <button class="button" type="submit" name="submit" >Login</button>
+        <button class="button" type="submit" name="submit" >LOGIN</button>
          <div id="div__container__registration">
             <h4>Don't have an account yet?</h4>
             <h5>Click <a href="http://localhost:8888/GitHub/gato/signup.php">here</a></h5> 
+
+            <h4>Forgot password?</h4>
+            <h5>Click <a href="">here</a></h5> 
         </div>
   </form> 
    </div>
