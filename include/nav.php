@@ -1,6 +1,12 @@
+<!--
+    Mike - 12/03/19
+
+    Af blijven
+-->
+
 <nav>
     <div class="nav__left-container">
-        <h1 class="nav__title" title="Gato">gato</h1>
+        <h1 class="nav__title" title="Gato"><?=$_BRAND; ?></h1>
         <a href="./" class="nav__link">home</a>
         <a href="./about" class="nav__link">about</a>
     </div>

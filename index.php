@@ -1,3 +1,5 @@
+<?php require 'include/php_header.php'; ?>
+
 <!DOCTYPE html>
 <html>
 <head>

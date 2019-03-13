@@ -1,9 +1,12 @@
-<!DOCTYPE html>
 <!-- "Matthijs" ik heb de signup.php verbeterd, nu moet het alleen nog aan een database gekoppeld worden. -->
+<!-- Mike - 13/03/19 - Heb php_header toe gevoegt en heb de titel veranderd -->
+
+<?php require 'include/php_header.php'; ?>
+<!DOCTYPE html>
 <html>
 <head>
     <?php require 'include/meta.php'; ?>
-    <title>Gato</title>
+    <title>Sign up - <?=$_BRAND ?></title>
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/signup.css" />
 </head>
 <body>
@@ -12,13 +15,14 @@
         <div id="div__container__tekst">
             <h1>Registration</h1>
         </div>
-        <form>
-        <input type="text" name="Mail" placeholder="Email" class="div__container__info">
-        <input type="text" name="Full Name" placeholder="Full Name" class="div__container__info">
-        <input type="text" name="Username" placeholder="Username" class="div__container__info">
-        <input type="text" name="Password" placeholder="Password" class="div__container__info">
+        <form method="POST" action="api/account/signup.php">
+            <input type="text" name="email" placeholder="Email" class="div__container__info">
+            <input type="text" name="name" placeholder="Full Name" class="div__container__info">
+            <input type="text" name="username" placeholder="Username" class="div__container__info">
+            <input type="text" name="password" placeholder="Password" class="div__container__info">
         </form>
-        <input type="button" class="button" value="Register">
+        <!--<input type="button" class="button" value="Register"> -->
+        <button class="button" type="submit" name="submit">Register</button>
     </div>
 </body>
 </html>
