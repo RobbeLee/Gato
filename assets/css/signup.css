@@ -44,8 +44,14 @@ form {
 
   #div__container__registration{
       padding-top: 30px;
+      color: rgb(122, 122, 122);
   }
 
 a{
     color: #6600EE; 
+    font-size: 18px;
+}
+
+h4{
+    padding-top: 20px;
 }
