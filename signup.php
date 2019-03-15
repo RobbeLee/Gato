@@ -19,10 +19,11 @@
             <input type="text" name="email" placeholder="Email" class="div__container__info">
             <input type="text" name="name" placeholder="Full Name" class="div__container__info">
             <input type="text" name="username" placeholder="Username" class="div__container__info">
-            <input type="text" name="password" placeholder="Password" class="div__container__info">
+            <input type="text" name="password" placeholder="Password" class="div__container__info"> 
+            <form action="http://localhost:8888/GitHub/Gato/">
         </form>
         <!--<input type="button" class="button" value="Register"> -->
-        <form action="http://localhost:8888/GitHub/Gato/">
+       
         <button class="button" type="submit" name="submit" >REGISTER</button>
   </form> 
    </div>

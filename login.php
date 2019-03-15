@@ -17,18 +17,16 @@
         <form method="POST" action="api/account/signup.php">
             <input type="text" name="email" placeholder="Email" class="div__container__info">
             <input type="text" name="password" placeholder="Password" class="div__container__info">
+            <button class="button" type="submit" name="submit" >LOGIN</button>
         </form>
         <!--<input type="button" class="button" value="Register"> -->
-        <form action="http://localhost:8888/GitHub/Gato/">
-        <button class="button" type="submit" name="submit" >LOGIN</button>
          <div id="div__container__registration">
             <h4>Don't have an account yet?</h4>
-            <h5>Click <a href="http://localhost:8888/GitHub/gato/signup.php">here</a></h5> 
+         <a href="./">Click here</a>
 
             <h4>Forgot password?</h4>
-            <h5>Click <a href="">here</a></h5> 
+                <a href="./">Click here</a>
         </div>
-  </form> 
    </div>
 </body>
 </html>
