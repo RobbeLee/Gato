@@ -15,9 +15,9 @@
             <h1>Login</h1>
         </div>
         <form method="POST" action="api/account/signup.php">
-            <input type="text" name="email" placeholder="Email" class="div__container__info">
-            <input type="text" name="password" placeholder="Password" class="div__container__info">
-            <button class="button" type="submit" name="submit" >LOGIN</button>
+            <input type="email" name="email" placeholder="Email" class="div__container__info" required>
+            <input type="password" name="password" placeholder="Password" class="div__container__info" required>
+            <button class="button" type="submit" name="submit">LOGIN</button>
         </form>
         <!--<input type="button" class="button" value="Register"> -->
          <div id="div__container__registration">

@@ -16,15 +16,13 @@
             <h1>Registration</h1>
         </div>
         <form method="POST" action="api/account/signup.php">
-            <input type="text" name="email" placeholder="Email" class="div__container__info">
-            <input type="text" name="name" placeholder="Full Name" class="div__container__info">
-            <input type="text" name="username" placeholder="Username" class="div__container__info">
-            <input type="text" name="password" placeholder="Password" class="div__container__info"> 
-            <form action="http://localhost:8888/GitHub/Gato/">
+            <input type="email" name="email" placeholder="Email" class="div__container__info" required>
+            <input type="text" name="name" placeholder="Full Name" class="div__container__info" required>
+            <input type="text" name="username" placeholder="Username" class="div__container__info" required>
+            <input type="password" name="password" placeholder="Password" class="div__container__info" required> 
+            <form action="http://localhost:8888/GitHub/Gato/">     
+            <button class="button" type="submit" name="submit" >REGISTER</button>
         </form>
-        <!--<input type="button" class="button" value="Register"> -->
-       
-        <button class="button" type="submit" name="submit" >REGISTER</button>
   </form> 
    </div>
 </body>

@@ -1,3 +1,5 @@
+@import 'default.css';
+
 #div__container__tekst {
     font-size: 22px;
     padding-top: 30px;
@@ -11,7 +13,7 @@
     text-align: center;
 }
 
-input[type=text] {
+input {
     border: none;
     font-size: 24px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.200);
@@ -34,7 +36,7 @@ form {
 
 .button {
     background-color: #6600EE;
-    border-radius: 12px;
+    border-radius: 40px;
     color: white;
     text-align: center;
     cursor: pointer;
