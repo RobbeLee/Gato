@@ -1,4 +1,5 @@
 <?php
+require '../../include/db.php';
 require '../../include/php_header.php';
 
 /*
@@ -8,8 +9,8 @@ Error explained:
 0: Not every field has been filled in.
 1: The password/username/name includes invalid characters (only a-z A-Z 0-9 allowed)
 2: The name/username/password was longer than 60 characters
-3: This email/username already exists
-4: Invalid email address
+3: Invalid email address
+4: This email/username already exists
 
 */
 
@@ -19,26 +20,37 @@ if (empty($_POST['email']) || empty($_POST['name']) || empty($_POST['username'])
 
 $name = $_POST['name'];
 $username = $_POST['username'];
-$email = $_POST['email'];
+$email = strtolower($_POST['email']);
 $password = $_POST['password'];
-$date = date('Y-m-d H:i:s');
+$created = date('Y-m-d H:i:s');
 
 $password = password_hash($password, PASSWORD_DEFAULT);
 
-if (!preg_match("/^[a-zA-Z0-9]*$/", $name) || !preg_match("/^[a-zA-Z0-9]*$/", $username) || !preg_match("/^[a-zA-Z0-9]*$/", $password)) header("Location: ../../signup?error=1");
+//if (!preg_match("/^[a-zA-Z0-9]*$/", $name) || !preg_match("/^[a-zA-Z0-9]*$/", $username) || !preg_match("/^[a-zA-Z0-9]*$/", $password)) header("Location: ../../signup?error=1");
 
 if (strlen($name) > 60 || strlen($username) > 60 || strlen($password) > 60) header("Location: ../../signup?error=2");
 
-// Note to self: come back here later to check for duplicate emails & username's
-// Error nm: 3
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) header("Location: ../../signup?error=3");
 
-if (!filter_var($email, FILTER_VALIDATE_EMAIL)) header("Location: ../../signup?error=4");
+$stmt = $conn->prepare("SELECT * FROM users WHERE email=?");
+$stmt->execute([$email]);
+$result = $stmt->fetch();
+
+$foundEmail = $result['email'];
+
+if ($foundEmail) header("Location: ../../signup?error=4");
 
 $path = "../channel/".strtolower($username).".php";
 $content = "<?php include '../include/profile.php';"; // Will be made later
 file_put_contents($path, $content);
 
-// Make PDO query
+$stmt = $conn->prepare("INSERT INTO users (name, username, email, password, created, ip) VALUES (?, ?, ?, ?, ?, ?)");
+
+if (!$stmt->execute([$name, $username, $email, $password, $created, $ip])) {
+    echo "<h1>Fatal query error encountered.<br>Please come again</h1>";
+    exit;
+    die;
+}
 
 header("Location: ../../login");
 exit;
