@@ -2,10 +2,7 @@
 
 // Mike - 15/02/19
 
-$host       = "localhost";
-$username   = "root";
-$password   = "";
-$dbname     = "gato";
+require_once dirname(__FILE__). DIRECTORY_SEPARATOR.'config.php';
 $dsn        = "mysql:host=$host;dbname=$dbname";
 $options    = [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION];
 
