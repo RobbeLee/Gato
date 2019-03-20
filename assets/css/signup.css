@@ -69,11 +69,21 @@ button:hover::after {
       color: rgb(122, 122, 122);
   }
 
-a{
+  #div__container__registration a{
     color: #6600EE; 
     font-size: 18px;
 }
 
 h4{
     padding-top: 20px;
+}
+
+.container__brand{
+    color: #000;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+h2{
+    font-weight: 500;
 }

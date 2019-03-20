@@ -13,7 +13,8 @@
     <div id="container">
             <img src="assets/images/logo/hop_github_logo.svg" alt="logo" id="body__container__logo">
         <div id="div__container__tekst">
-            <h1>Registration</h1>
+        <a href="./" class="container__brand">Gato</a>          
+        <h2>Registration</h2>
         </div>
         <form method="POST" action="api/account/signup.php">
             <input type="email" name="email" placeholder="Email" class="div__container__info" required>
