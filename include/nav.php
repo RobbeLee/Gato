@@ -45,11 +45,11 @@
         <span class="user-nav__email"><?=$_SESSION['email']; ?></span>
     </div>
     <div class="user-nav__body">
-        <a href="./u/<?=$_SESSION['id']; ?>" class="user-nav__link">my profile</a>
-        <a href="./u/<?=$_SESSION['id']; ?>" class="user-nav__link">my posts</a>
-        <a href="./u/<?=$_SESSION['id']; ?>/liked" class="user-nav__link">liked posts</a>
-        <a href="./account/settings" class="user-nav__link">settings</a>
-        <a href="./logout" class="user-nav__link">sign out</a>
+        <a href="./u/<?=$_SESSION['id']; ?>" class="user-nav__link"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg><span class="user-nav__link-span">my profile</span></a>
+        <a href="./u/<?=$_SESSION['id']; ?>" class="user-nav__link"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M4 14h4v-4H4v4zm0 5h4v-4H4v4zM4 9h4V5H4v4zm5 5h12v-4H9v4zm0 5h12v-4H9v4zM9 5v4h12V5H9z"/></svg><span class="user-nav__link-span">my posts</span></a>
+        <a href="./u/<?=$_SESSION['id']; ?>/liked" class="user-nav__link"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg><span class="user-nav__link-span">liked posts</span></a>
+        <a href="./account/settings" class="user-nav__link"><svg width="20" height="20" viewBox="0 0 20 20"><path d="M15.95 10.78c.03-.25.05-.51.05-.78s-.02-.53-.06-.78l1.69-1.32c.15-.12.19-.34.1-.51l-1.6-2.77c-.1-.18-.31-.24-.49-.18l-1.99.8c-.42-.32-.86-.58-1.35-.78L12 2.34c-.03-.2-.2-.34-.4-.34H8.4c-.2 0-.36.14-.39.34l-.3 2.12c-.49.2-.94.47-1.35.78l-1.99-.8c-.18-.07-.39 0-.49.18l-1.6 2.77c-.1.18-.06.39.1.51l1.69 1.32c-.04.25-.07.52-.07.78s.02.53.06.78L2.37 12.1c-.15.12-.19.34-.1.51l1.6 2.77c.1.18.31.24.49.18l1.99-.8c.42.32.86.58 1.35.78l.3 2.12c.04.2.2.34.4.34h3.2c.2 0 .37-.14.39-.34l.3-2.12c.49-.2.94-.47 1.35-.78l1.99.8c.18.07.39 0 .49-.18l1.6-2.77c.1-.18.06-.39-.1-.51l-1.67-1.32zM10 13c-1.65 0-3-1.35-3-3s1.35-3 3-3 3 1.35 3 3-1.35 3-3 3z"/></svg><span class="user-nav__link-span">settings</span></a>
+        <a href="./logout" class="user-nav__link"><svg viewBox="0 0 24 24"><path d="M0,18 0,0 12,0 12,6 10,6 10,2 2,2 2,16 10,16 10,12 12,12 12,18 0,18Z M6,8 6,10 14,10 14,15 18,9 14,3 14,8"></path></svg><span class="user-nav__link-span">sign out</span></a>
     </div>
 </div>
-<?php endif; ?>
+<?php endif; ?> 
