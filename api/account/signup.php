@@ -14,9 +14,15 @@ Error explained:
 
 */
 
-if (!isset($_POST['submit'])) header("Location: ../../"); // Error -1
+if (!isset($_POST['submit'])) {
+    header("Location: ../../"); // Error -1
+    exit;
+}
 
-if (empty($_POST['email']) || empty($_POST['name']) || empty($_POST['username']) || empty($_POST['password'])) header("Location: ../../signup?error=0");
+if (empty($_POST['email']) || empty($_POST['name']) || empty($_POST['username']) || empty($_POST['password'])) {
+    header("Location: ../../signup?error=0");
+    exit;
+}
 
 $name = $_POST['name'];
 $username = $_POST['username'];
@@ -28,9 +34,15 @@ $password = password_hash($password, PASSWORD_DEFAULT);
 
 //if (!preg_match("/^[a-zA-Z0-9]*$/", $name) || !preg_match("/^[a-zA-Z0-9]*$/", $username) || !preg_match("/^[a-zA-Z0-9]*$/", $password)) header("Location: ../../signup?error=1");
 
-if (strlen($name) > 60 || strlen($username) > 60 || strlen($password) > 60) header("Location: ../../signup?error=2");
+if (strlen($name) > 60 || strlen($username) > 60 || strlen($password) > 60) {
+    header("Location: ../../signup?error=2");
+    exit;
+}
 
-if (!filter_var($email, FILTER_VALIDATE_EMAIL)) header("Location: ../../signup?error=3");
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    header("Location: ../../signup?error=3");
+    exit;
+}
 
 $stmt = $conn->prepare("SELECT * FROM users WHERE email=?");
 $stmt->execute([$email]);
@@ -38,7 +50,10 @@ $result = $stmt->fetch();
 
 $foundEmail = $result['email'];
 
-if ($foundEmail) header("Location: ../../signup?error=4");
+if ($foundEmail == $email) {
+    header("Location: ../../signup?error=4");
+    exit;
+}
 
 $path = "../channel/".strtolower($username).".php";
 $content = "<?php include '../include/profile.php';"; // Will be made later
