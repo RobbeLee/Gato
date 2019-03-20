@@ -35,14 +35,34 @@ form {
 }
 
 .button {
-    background-color: #6600EE;
-    border-radius: 40px;
-    color: white;
-    text-align: center;
-    cursor: pointer;
-    padding: 20px 90px;
-    font-size: 24px;
-  }
+	color: #fff;
+	font-size: 24px;
+	font-weight: 700;
+	text-transform: uppercase;
+    padding: 19px 58px;
+	border-radius: 40px;
+	background: #000;
+	position: relative;
+	overflow: hidden;
+	z-index: 1;
+}
+
+button::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 250px;
+	height: 140px;
+	background: #6600ee;
+	z-index: -1;
+	transform: rotate(25deg) translate(-265px, -32px);
+	transition: transform 250ms ease;
+}
+
+button:hover::after {
+	transform: rotate(25deg) translate(-24px, -32px);
+}
 
   #div__container__registration{
       padding-top: 30px;
