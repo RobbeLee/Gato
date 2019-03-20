@@ -1,12 +1,14 @@
-<?php require 'include/php_header.php'; ?>
+<?php
+require 'include/db.php';
+require 'include/php_header.php';
+?>
 
 <!DOCTYPE html>
 <html>
 <head>
     <?php require 'include/meta.php'; ?>
+    <link rel="stylesheet" href="assets/css/index.css">
     <title>Gato</title>
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
 </head>
 <body>
     <?php require 'include/nav.php'; ?>
