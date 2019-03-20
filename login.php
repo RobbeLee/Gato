@@ -23,7 +23,7 @@
         <!--<input type="button" class="button" value="Register"> -->
          <div id="div__container__registration">
             <h4>Don't have an account yet?</h4>
-         <a href="./signup.php">Click here</a>
+         <a href="./signup">Click here</a>
 
             <h4>Forgot password?</h4>
                 <a href="./">Click here</a>
