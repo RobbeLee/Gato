@@ -15,7 +15,7 @@
             <a href="./" class="container__brand">Gato</a>
             <h2>Login</h2>
         </div>
-        <form method="POST" action="api/account/signup.php">
+        <form method="POST" action="api/account/login.php">
             <input type="email" name="email" placeholder="Email" class="div__container__info" required>
             <input type="password" name="password" placeholder="Password" class="div__container__info" required>
             <button class="button" type="submit" name="submit">LOGIN</button>
