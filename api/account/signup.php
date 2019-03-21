@@ -55,8 +55,8 @@ if ($foundEmail == $email) {
     exit;
 }
 
-$path = "../channel/".strtolower($username).".php";
-$content = "<?php include '../include/profile.php';"; // Will be made later
+$path = "../../u/".strtolower($username).".php";
+$content = "<?php require '../include/profile.php';"; // Will be made later
 file_put_contents($path, $content);
 
 $stmt = $conn->prepare("INSERT INTO users (name, username, email, password, created, ip) VALUES (?, ?, ?, ?, ?, ?)");
