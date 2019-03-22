@@ -1,13 +1,15 @@
 <!-- 'Matthijs' 13-03-2019, ik heb de login pagina gemaakt en de "dont have an account yet" gekoppeld aan de local host van signup-->
 <!-- "Matthijs" - 20/03/2019 - ik heb de home knop toegevoegt en de button mooi gemaakt met de hover-->
 
-<?php require 'include/php_header.php'; ?>
+<?php require 'include/php_header.php';
+$subFolder = false;
+$_TITLE = "Login | ".$_BRAND;
+$_PAGE = "signup";
+?>
 <!DOCTYPE html>
 <html>
 <head>
     <?php require 'include/meta.php'; ?>
-    <title>Sign up - <?=$_BRAND ?></title>
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/signup.css" />
 </head>
 <body>
     <div id="container">

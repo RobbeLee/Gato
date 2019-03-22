@@ -1,13 +1,15 @@
 <!-- "Matthijs" ik heb de signup.php verbeterd, nu moet het alleen nog aan een database gekoppeld worden. -->
 <!-- Mike - 13/03/19 - Heb php_header toe gevoegt en heb de titel veranderd -->
 <!-- "Matthijs" - 20/03/2019 - ik heb de home knop toegevoegt en de button mooi gemaakt met de hover-->
-<?php require 'include/php_header.php'; ?>
+<?php require 'include/php_header.php';
+$subFolder = false;
+$_TITLE = "Sign Up | ".$_BRAND;
+$_PAGE = "signup";
+?>
 <!DOCTYPE html>
 <html>
 <head>
     <?php require 'include/meta.php'; ?>
-    <title>Sign up - <?=$_BRAND ?></title>
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/signup.css" />
 </head>
 <body>
     <div id="container">
