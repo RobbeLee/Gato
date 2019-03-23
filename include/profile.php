@@ -2,8 +2,8 @@
 require '../include/db.php';
 require '../include/php_header.php';
 $subFolder = true;
-$user = ucwords(basename($_URL));
-$_TITLE = $user." | ".$_BRAND;
+$user = basename($_URL);
+$_TITLE = ucwords($user)." | ".$_BRAND;
 $_PAGE = "profile";
 ?>
 
