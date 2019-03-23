@@ -67,5 +67,17 @@ if (!$stmt->execute([$name, $username, $email, $password, $created, $ip])) {
     die;
 }
 
+$stmt = $conn->prepare("SELECT id FROM users WHERE username=?;");
+$stmt->execute([$username]);
+$result = $stmt->fetch();
+
+$stmt = $conn->prepare("INSERT INTO user_settings (user_id, location, language) VALUES (?, ?, ?);");
+
+if (!$stmt->execute([$result[0], 'United States', 'US'])) {
+    echo "<h1>Fatal query error encountered.<br>Please come again</h1>";
+    exit;
+    die;
+}
+
 header("Location: ../../login");
 exit;
