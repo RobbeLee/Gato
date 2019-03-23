@@ -113,6 +113,11 @@ nav {
             border: 1px solid rgba(0,0,0,0.2);
             color: #000;
             font-size: 18px;
+            transition: border 200ms ease;
+        }
+
+        .nav__input:hover {
+            border-color: rgba(0,0,0,0.4);
         }
 
         .nav__search-btn {
@@ -136,6 +141,11 @@ nav {
             fill: transparent;
             stroke-width: 1px;
             stroke: rgba(0,0,0,0.2);
+            transition: stroke 200ms ease;
+        }
+
+        .nav__search-btn:hover svg > path {
+            stroke: rgba(0,0,0,0.4);
         }
 
         .nav__btn {
@@ -188,6 +198,11 @@ nav {
             overflow: hidden;
             border-radius: 50%;
             margin-left: 30px;
+            transition: box-shadow 200ms ease;
+        }
+
+        .nav__pfp-container:hover {
+            box-shadow: 0 0 0 1px #6600ee;
         }
 
         .nav__pfp {
@@ -317,4 +332,8 @@ nav {
 
         .user-nav__link:hover {
             background: #fafafa;
+        }
+
+        .user-nav__link--active svg, .user-nav__link--active path {
+            fill: #6600ee;
         }
