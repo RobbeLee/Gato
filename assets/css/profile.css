@@ -1,1 +1,36 @@
 @import 'default.css';
+*{
+    text-align: center;
+}
+
+#container img{
+    width: 250px;
+    border-radius: 50%;
+    float: left;
+    margin-left: 33%;
+}
+
+#container__pfp{
+    padding-top: 200px;
+}
+
+#container__href{
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    align-items: center;
+    border-bottom: solid 1px;
+    width: 100%;
+    padding-top: 30px;
+}
+
+.href{
+    color: black;
+    font-weight: 600;
+}
+
+#container__info{
+    padding-top: 5%;
+    float: right;
+    margin-right: 33%;
+}
