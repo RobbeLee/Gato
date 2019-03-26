@@ -1,7 +1,4 @@
 @import 'default.css';
-*{
-    text-align: center;
-}
 
 #container img{
     width: 250px;
@@ -13,20 +10,27 @@
 #container__pfp{
     padding-top: 200px;
 }
+#container{
+background-color: #fafafa;
+}
 
 #container__href{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin: 0;
     align-items: center;
-    border-bottom: solid 1px;
+    box-shadow:  0 0 10px -8px #000;
     width: 100%;
-    padding-top: 30px;
+    padding-top: 40px;
 }
 
 .href{
     color: black;
     font-weight: 600;
+}
+
+#ahref{
+margin: 0px 160px;
 }
 
 #container__info{
