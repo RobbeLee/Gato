@@ -20,13 +20,13 @@
                 That are just impossible to use. <br>They are busy and often have annoying popups. Here at Gato we see this
                 and get a little frustrated about it, we will offer you a place where you just come to share a photo and
                 look at the photo's of your friends.<br> Nothing more, nothing less. This way we can offer you minimalistic design
-                that is easy to use and navigate.</p>
+                that is easy to use and navigate.</p> <br><br>
         </div>
         <div class="whoWeAre">
             <h2> Who are we </h2>
             <p>Our names are Matthijs, Mike and Robbe. 
                 We are three Dutch students, who do a mediadevelopment course. <br>
-                During this course we get several assigments and this is one of them.</p> <br> <br>
+                During this course we get several assigments and this is one of them.</p> <br>
             <div class="names">
                 <h3>Matthijs</h3>
                 <p><i>stukje over mij</i></p> <br>
@@ -34,7 +34,7 @@
                 <p><b><i>nee</i></b></p> <br>
                 <h3>Robbe</h3>
                 <p>Hi my name is Robbe and I am a 16 year student from the Netherlands.
-                    I did all of the documentation and this about page for our project.</p>
+                    I did all of the documentation and this about page for our project.</p><br><br>
             </div>
         </div>
         <div class="whatWeDo">
@@ -45,7 +45,7 @@
                 our GitHub links.<br></p>
                 <a href="https://github.com/263782" target="_blank">Matthijs</a><br>
                 <a href="https://github.com/MikeS25933" target="_blank">Mike</a><br>
-                <a href="https://github.com/RobbeLee" target="_blank">Robbe</a>
+                <a href="https://github.com/RobbeLee" target="_blank">Robbe</a><br><br>
         </div>
         <div class="whatWeAchive">
             <h2>What we hope to achieve</h2>
