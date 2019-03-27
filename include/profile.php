@@ -6,7 +6,11 @@ $user = basename($_URL);
 $_TITLE = ucwords($user)." | ".$_BRAND;
 $_PAGE = "profile";
 
+$stmt = $conn->prepare("SELECT * FROM users WHERE username=?;");
+$stmt->execute([$user]);
+$result = $stmt->fetch();
 // SELECT * FROM users WHERE username=?;
+
 ?>
 
 <!DOCTYPE html>
