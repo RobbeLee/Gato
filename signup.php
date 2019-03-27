@@ -5,6 +5,31 @@
 $subFolder = false;
 $_TITLE = "Sign Up | ".$_BRAND;
 $_PAGE = "signup";
+
+if (isset($_GET['error'])) {
+    $error = filter_var($_GET['error'], FILTER_VALIDATE_INT);
+    switch ($error) {
+        case 0:
+        $message = "Not every field has been filled in. ";
+        break;
+        case 1:
+        $message = "The password/username/name includes invalid characters (only a-z A-Z 0-9 allowed).";
+        break;
+        case 2:
+        $message = "The name/username/password was longer than 60 characters.";
+        break;
+        case 3:
+        $message = "Invalid email address.";
+        break;
+        case 4:
+        $message = "This email/username already exists.";
+        break;
+        default:
+        $message="Error not found.";
+            break;
+    }
+
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -18,6 +43,9 @@ $_PAGE = "signup";
         <a href="./" class="container__brand">Gato</a>          
         <h2>Registration</h2>
         </div>
+        <?php if (isset($_GET['error'])): ?>
+        <span><?=$message?></span>
+        <?php endif; ?>
         <form method="POST" action="api/account/signup.php">
             <input type="email" name="email" placeholder="Email" class="div__container__info" required>
             <input type="text" name="name" placeholder="Full Name" class="div__container__info" required>
@@ -29,4 +57,4 @@ $_PAGE = "signup";
   </form> 
    </div>
 </body>
-</html>
+</html> 
