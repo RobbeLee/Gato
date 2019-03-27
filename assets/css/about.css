@@ -1,1 +1,5 @@
 @import 'default.css';
+
+.wrapper{
+    padding: 60px;
+}
