@@ -34,7 +34,7 @@ form {
     padding: 30px;
 }
 
-.button {
+.button { 
 	color: #fff;
 	font-size: 24px;
 	font-weight: 700;
@@ -86,4 +86,8 @@ h4{
 
 h2{
     font-weight: 500;
+}
+
+span{
+    color: rgb(255, 0, 0);
 }
