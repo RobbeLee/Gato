@@ -28,15 +28,22 @@
                 We are three Dutch students, who do a mediadevelopment course. <br>
                 During this course we get several assigments and this is one of them.</p> <br>
             <div class="names">
-                <h3>Matthijs</h3>
-                <p><i>stukje over mij</i></p> <br>
-                <h3>Mike</h3>
-                <p><b><i>nee</i></b></p> <br>
-                <h3>Robbe</h3>
-                <p>Hi my name is Robbe and I am a 16 year student from the Netherlands.
-                    I did all of the documentation and this about page for our project.</p><br><br>
+                <div class="card">
+                    <h3 class="card__title">Matthijs</h3>
+                    <p class="card__p"><i>stukje over mij</i></p> <br>
+                </div>
+                <div class="card">
+                    <h3 class="card__title">Mike</h3>
+                    <p class="card__p"><b><i>nee</i></b></p> <br>
+                </div>
+                <div class="card">
+                    <h3 class="card__title">Robbe</h3>
+                    <p class="card__p">Hi my name is Robbe and I am a 16 year old student from the Netherlands.<br>
+                        I did all of the documentation and this about page for our project.</p>
+                </div>            
             </div>
         </div>
+        <br><br>
         <div class="whatWeDo">
             <h2> What we do</h2>
             <p>As said earlier, we are still students. We currently study mediadevelopment at MediaCollege Amsterdam.<br>
