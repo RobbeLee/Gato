@@ -1,5 +1,120 @@
 @import 'default.css';
 
 .wrapper{
-    padding: 60px;
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
+.section{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.section--colour{
+    background: #fafafa;
+    padding: 20px 0;
+}
+.section__title{
+    font-size: 24px;
+    width: 500px;
+    position: relative;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+.section__title::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200px;
+    height: 1px;
+    background: #6600ee;
+}
+.section__p{
+    width: 500px;
+}
+.about{
+    margin-bottom: 80px;
+}
+.about__title{
+    margin-bottom: 5px; 
+    width: 500px;
+    position: relative;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+.about__title::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200px;
+    height: 1px;
+    background: #6600ee;
+}
+.site{
+    margin-bottom: 80px;
+}
+.who{
+    margin-bottom: 80px;
+}
+.names{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 960px;
+}
+.card{
+    background-color: #fafafa;
+    padding: 20px;
+    width: 300px;
+    height: 400px;
+    box-shadow: 3px 3px 10px -8px #000;
+    margin: 0 20px 20px 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+.card__img{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,0,0,.2);
+    margin-bottom: 20px;
+}
+.card__title{
+    justify-content: center;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    position: relative;
+}
+.card__title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 1px;
+    background: #6600ee;
+}
+.card__link{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: #000;
+    font-weight: 500;
+}
+.what{
+    margin-bottom: 80px;
+}
+.achieve{
+    margin-bottom: 80px;
+}
+
