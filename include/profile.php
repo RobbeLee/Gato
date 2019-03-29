@@ -10,7 +10,13 @@ $stmt = $conn->prepare("SELECT * FROM users WHERE username=?;");
 $stmt->execute([$user]);
 $result = $stmt->fetch();
 // SELECT * FROM users WHERE username=?;
-
+$path = '../assets/userfiles/pfp/'.$result['id'].'.webp';
+if (file_exists($path)) {
+    $userPfp = $path;
+} else {
+    $userPfp = "assets/userfiles/pfp/default.webp";
+    if ($subFolder) $userPfp = "../".$userPfp;
+}
 ?>
 
 <!DOCTYPE html>
@@ -22,12 +28,12 @@ $result = $stmt->fetch();
 </head>
 <body>
     <?php require '../include/nav.php'; ?>
-    <div id="container">
+    <div id="container"> 
     <div id="container__pfp">
-    <img src="./assets/userfiles/pfp/default.webp" alt="error" class="container__pfp">
+    <img src="<?=$userPfp?>" alt="error" class="container__pfp">
     <div id="container__info">
-        <h2 class="user-nav__username">@<?=$_SESSION['username']; ?></h2>
-        <span class="user-nav__email"><?=$_SESSION['email']; ?></span>
+    <span class="user-nav__name"><?=$result['name']; ?></span>
+    <h2 class="user-nav__username">@<?=$result['username']; ?></h2>
     </div>
 </div>
     <div>
