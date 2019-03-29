@@ -12,6 +12,9 @@
 }
 #container{
 background-color: #fafafa;
+-webkit-box-shadow: 0 3px 10px -8px black;
+	   -moz-box-shadow: 0 3px 10px -8px black;
+	        box-shadow: 0 3px 10px -8px black;
 }
 
 #container__href{
@@ -23,7 +26,9 @@ background-color: #fafafa;
     width: 100%;
     padding-top: 40px;
 }
-
+#container__href a:hover{
+    color: #6b6b6b;
+}
 .href{
     color: black;
     font-weight: 600;
@@ -38,3 +43,12 @@ margin: 0px 160px;
     float: right;
     margin-right: 33%;
 }
+
+.user-nav__username{
+    border-bottom: 1px solid #000;
+}
+
+.user-nav__name{
+    margin-bottom: 20px;
+}
+
