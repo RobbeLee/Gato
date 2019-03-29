@@ -110,6 +110,22 @@
     left: 20px;
     color: #000;
     font-weight: 500;
+    cursor: pointer;
+}
+.card__link::after{
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background: #6600ee;
+    transform: scale(0,1);
+    transform-origin: left;
+    transition: transform 200ms ease;
+}
+.card__link:hover::after {
+    transform: scale(1,1);
 }
 .what{
     margin-bottom: 80px;
