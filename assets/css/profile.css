@@ -34,7 +34,7 @@ background-color: #fafafa;
     color: #6b6b6b;
 }
 .header__link{
-    color: black;
+    color: rgba(0,0,0,0.4);
     font-weight: 600;
 }
 
@@ -62,4 +62,8 @@ margin: 0px 160px;
 #header__info{
 padding-top: 100px;
 padding-left: 20px;
+}
+
+.header__username{
+    padding-bottom: 10px;
 }
