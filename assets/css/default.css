@@ -339,3 +339,14 @@ nav {
         .user-nav__link--active svg, .user-nav__link--active path {
             fill: #6600ee;
         }
+
+footer {
+    background: #f0f0f0;
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+}
+.footer__title{
+    font-size: 18px;
+    color: #e4aef9;
+}
