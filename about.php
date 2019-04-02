@@ -56,14 +56,14 @@
         <div class="section what section--colour">
             <h2 class="section__title"> What we do</h2>
             <p class="section__p">As said earlier, we are still students. We currently study mediadevelopment at MediaCollege Amsterdam.<br>
-                This is a three year course in which we will have to do many projects, this so happens to be one of them.<br>
+                Mediadevelopment is a three year course in which we will have to do many projects, this so happens to be one of them.<br>
                 Over the three years we will make a ton of project so if you want to see the rest, take a look at 
-                our GitHub links.<br></p>
+                our GitHub links. These links can be found in our cards.<br></p>
         </div>
         <div class="section achieve">
             <h2 class="section__title">What we hope to achieve</h2>
             <p class="section__p">We hope that we can offer you a platform where you can share your photo's easy and fast.<br>
-                We can only do this with your feedback tho so if you have any issues or remarks please contact us.
+                However we can only do this with your feedback, so if you have any issues or remarks please contact us.
                 </p>
         </div>
     </div>
