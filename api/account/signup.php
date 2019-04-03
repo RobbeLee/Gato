@@ -4,7 +4,7 @@ require '../../include/php_header.php';
 
 /*
 
-Error explained:
+Errors explained:
 -1: The user got here without activating the form itself. The user most likely munually navigated here.
 0: Not every field has been filled in.
 1: The password/username/name includes invalid characters (only a-z A-Z 0-9 allowed)
