@@ -1,3 +1,9 @@
+<!--- 
+
+    Van Robbe ~ op donderen
+
+--->
+
 <?php
     require 'include/php_header.php';
     $subFolder = false;
@@ -32,20 +38,20 @@
                 During this course we get several assigments and this is one of them.</p>
             <div class="names">
                 <div class="card">
-                    <img src="assets/userfiles/pfp/default.webp" alt="Matthijs's face" class="card__img">
+                    <div class="card__img-container"><img src="assets/images/matthijs.jpg" alt="Matthijs's face" class="card__img"></div>
                     <h3 class="card__title">Matthijs</h3>
                     <p class="card__p"><i>stukje over mij</i></p> 
                     <a href="https://github.com/263782" target="_blank" class="card__link">Github</a>
                 </div>
                 <div class="card">
-                    <img src="assets/userfiles/pfp/default.webp" alt="Matthijs's face" class="card__img">   
+                    <div class="card__img-container"><img src="assets/images/mike.jpg" alt="Mike's face" class="card__img"> </div>  
                     <h3 class="card__title">Mike</h3>
                     <p class="card__p"><b><i>nee</i></b></p>
                     <a href="https://github.com/MikeS25933" target="_blank" class="card__link">Github</a>
 
                 </div>
                 <div class="card">
-                    <img src="assets/userfiles/pfp/default.webp" alt="Matthijs's face" class="card__img">
+                    <div class="card__img-container"> <img src="assets/images/robbe.jpg" alt="Robbe's face" class="card__img"> </div>
                     <h3 class="card__title">Robbe</h3>
                     <p class="card__p">Hi my name is Robbe and I am a 16 year old student from the Netherlands.
                         I did all of the documentation and this about page for our project.</p>

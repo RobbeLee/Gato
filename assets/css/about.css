@@ -81,12 +81,20 @@
     flex-direction: column;
     position: relative;
 }
-.card__img{
-    height: 150px;
+.card__img-container {
     width: 150px;
-    border-radius: 50%;
+    height: 150px;
+    border-radius: 100%;
+    overflow: hidden;
     border: 1px solid rgba(0,0,0,.2);
     margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card__img{
+    height: 100%;
+    width: auto;
 }
 .card__title{
     justify-content: center;
