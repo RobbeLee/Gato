@@ -54,7 +54,7 @@ if (isset($_GET['error'])) {
             <form action="http://localhost:8888/GitHub/Gato/">     
             <button class="button" type="submit" name="submit" >REGISTER</button>
         </form>
-  </form> 
    </div>
+   <?php require 'include/footer.php'; ?>
 </body>
 </html> 

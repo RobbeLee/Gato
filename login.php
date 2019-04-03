@@ -13,7 +13,7 @@ $_PAGE = "signup";
 </head>
 <body>
     <div id="container">
-            <img src="assets/images/logo/hop_github_logo.svg" alt="logo" id="body__container__logo">
+        <img src="assets/images/logo/hop_github_logo.svg" alt="logo" id="body__container__logo">
         <div id="div__container__tekst">
             <a href="./" class="container__brand">Gato</a>
             <h2>Login</h2>
@@ -24,13 +24,14 @@ $_PAGE = "signup";
             <button class="button" type="submit" name="submit">LOGIN</button>
         </form>
         <!--<input type="button" class="button" value="Register"> -->
-         <div id="div__container__registration">
+        <div id="div__container__registration">
             <h4>Don't have an account yet?</h4>
-         <a href="./signup">Click here</a>
+            <a href="./signup">Click here</a>
 
             <h4>Forgot password?</h4>
-                <a href="./">Click here</a>
+            <a href="./">Click here</a>
         </div>
    </div>
+   <?php require 'include/footer.php'; ?>
 </body>
 </html>
