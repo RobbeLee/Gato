@@ -39,9 +39,9 @@ if (file_exists($path)) {
             </div>
         </div>
         <div id="header__links-container">
-            <a href="./" target="_blank" class="header__link">POST</a>
-            <a href="./" target="_blank" id="ahref" class="header__link">FAVORITES</a>
-            <a href="./" target="_blank" class="header__link">FRIENDS</a>
+            <a href="./" target="_blank" id="header__hover" class="header__link">POST</a>
+            <a href="./" target="_blank" id="header__hover" class="header__link">FAVORITES</a>
+            <a href="./" target="_blank" id="header__hover" class="header__link">FRIENDS</a>
         </div>
     </div>
 </body>
