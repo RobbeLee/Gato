@@ -7,6 +7,11 @@ $subFolder = true;
 $_TITLE = "Settings | ".$_BRAND;
 $_PAGE = "settings";
 
+if (!isset($_SESSION['id'])) {
+    header("Location: ../");
+    exit;
+}
+
 /*
     Mike - 23/03/19 - Get the country and language from database.
     Then in both loops check for those 2 and if they match make them have the selected attribute
@@ -31,7 +36,7 @@ $_PAGE = "settings";
         <div class="settings-body">
             <div class="settings-container" style="display: flex;" id="account">
                 <h2 class="settings__title">account</h2>
-                <form action="../api/settings/account.php" method="post" class="settings__form">
+                <form action="../api/settings/account.php" method="post" class="settings__form" enctype="multipart/form-data">
                     <div class="settings__input-container">
                         <input type="text" name="name" id="name" title="Name" autocomplete="off" autocorrect="off" spellcheck="false" autocapitalize="none" class="settings__input">
                         <label class="input__label" for="name">name</label>
@@ -51,13 +56,6 @@ $_PAGE = "settings";
                         <input type="file" name="file" id="file" style="display:none;" class="file__input">
                         <label for="file" class="file__label">Upload Profile Picture</label>
                         <span id="pfp-input-value" class="pfp-input-value"></span>
-                    </div>
-                    <div class="settings__input-container">
-                        <select name="language" id="language" class="select-input">
-                            <?php foreach ($_LANGUAGES as $lang): ?>
-                            <option value="<?=$lang['code']?>"><?=$lang['name']?></option>
-                            <?php endforeach; ?>
-                        </select>
                     </div>
                     <button type="submit" class="settings__btn">save</button>
                 </form>
