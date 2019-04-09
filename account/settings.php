@@ -57,7 +57,7 @@ if (!isset($_SESSION['id'])) {
                         <label for="file" class="file__label">Upload Profile Picture</label>
                         <span id="pfp-input-value" class="pfp-input-value"></span>
                     </div>
-                    <button type="submit" class="settings__btn">save</button>
+                    <button type="submit" name="submit" class="settings__btn">save</button>
                 </form>
             </div>
             <div class="settings-container" id="password">
@@ -78,7 +78,7 @@ if (!isset($_SESSION['id'])) {
                         <label class="input__label" for="email">repeat password</label>
                         <div class="input__underline"></div>
                     </div>
-                    <button type="submit" class="settings__btn">save</button>
+                    <button type="submit" name="submit" class="settings__btn">save</button>
                 </form>
 
             </div>
@@ -91,7 +91,7 @@ if (!isset($_SESSION['id'])) {
                             <?php endforeach; ?>
                         </select>
                     </div>
-                    <button type="submit" class="settings__btn">save</button>
+                    <button type="submit" name="submit" class="settings__btn">save</button>
                 </form>
 
             </div>
