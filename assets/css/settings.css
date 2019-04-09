@@ -159,6 +159,11 @@
                 background: #fafafa;
                 border: 1px dashed rgba(0,0,0,.2);
                 cursor: pointer;
+                transition: border 200ms ease;
+            }
+
+            .file__label:hover {
+                border-color: #6600ee;
             }
 
             .select-input {
