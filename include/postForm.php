@@ -24,4 +24,4 @@
         openModal ? modal.style.display = "none" : modal.style.display = "flex";
         openModal ? openModal = false : openModal = true;
     });
-</script>
+</script> 

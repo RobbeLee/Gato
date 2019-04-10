@@ -26,7 +26,7 @@
            // move_upload_file stuurt je bestand naar een andere locatie
            move_uploaded_file($file_tmp,"uploads/".$file_name);
            echo "Gelukt";
-    } else{
+    } else{ 
        print_r($errors);
     }
 ?>
