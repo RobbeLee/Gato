@@ -44,7 +44,7 @@ if (!empty($_POST['email'])) {
     }
 }
 
-if ($_FILES['file']['size'] > 0) {
+if (!empty($_FILES['file'])) {
     if(!file_exists($_FILES['file']['tmp_name']) || !is_uploaded_file($_FILES['file']['tmp_name'])) {
         array_push($errors, 'File does not exist.');
     } else {
