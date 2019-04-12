@@ -339,9 +339,31 @@ nav {
         .user-nav__link--active svg, .user-nav__link--active path {
             fill: #6600ee;
         }
-.myModal{
+#myModal{
     position: absolute;
-    
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    background: #91909077;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    z-index: 8888;
+}
+
+.form{
+    background: #fff;
+    width: 560px;
+    height: 40vh;
+    margin: 20px;
+}
+
+.close{
+    float: right;
 }
 
 footer {
