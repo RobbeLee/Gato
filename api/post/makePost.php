@@ -10,7 +10,7 @@
     // hierbij breek je de string na de . (punt) waardoor je de bestands type hebt
         $filename_deel = explode('.',$_FILES['image']['name']);
     // end laat de laatste waarde van de array zoen 
-        $bestandstype = end($filename_deel);
+        $bestandstype = end($filename_deel); 
     // voor het geval er JPG ipv jpg is geschreven
         $file_ext = strtolower($bestandstype);
     
