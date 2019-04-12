@@ -23,8 +23,6 @@ if (file_exists($path)) {
 <html>
 <head>
     <?php require '../include/meta.php'; ?>
-    <link rel="stylesheet" href="assets/css/index.css">
-    <link rel="stylesheet" href="assets/css/profile.css">
 </head>
 <body>
     <?php require '../include/nav.php'; ?>
