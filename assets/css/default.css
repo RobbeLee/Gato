@@ -339,6 +339,7 @@ nav {
         .user-nav__link--active svg, .user-nav__link--active path {
             fill: #6600ee;
         }
+
 #myModal{
     position: absolute;
     position: fixed;
@@ -362,8 +363,18 @@ nav {
     margin: 20px;
 }
 
-.close{
+.form__close{
     float: right;
+}
+
+.form__title:after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200px;
+    height: 1px;
+    background: #6600ee;
 }
 
 footer {
