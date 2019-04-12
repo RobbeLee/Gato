@@ -343,10 +343,6 @@ nav {
 #myModal{
     position: absolute;
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
     display: flex;
     background: #91909077;
     height: 100vh;
@@ -361,11 +357,35 @@ nav {
     width: 560px;
     height: 40vh;
     margin: 20px;
+    padding: 0;
+}
+.form__text{
+    padding-top: 10px;
+    padding-left: 17px;
 }
 
+.form__tekt{
+    border-bottom: #6600ee solid 1px;
+    padding-bottom: 20px;
+    width: 438px;
+}
 .form__close{
     float: right;
     cursor: pointer;
+    font-weight: 900;
+    font-size: 40px;
+    margin-right: 17px;
+}
+.form__file{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    background: #fafafa;
+    border: 1px dashed rgba(0,0,0,.2);
+    cursor: pointer;
+    transition: border 200ms ease;
 }
 
 .form__title:after{
