@@ -78,18 +78,17 @@ if (file_exists($path)) {
 
 <?php if ($_PAGE == "profile" && $user == strtolower($_SESSION['username'])): ?>
 <script>
-let h = window.location.hash,
-    page = (h.substr(1));
-
-
-Array.prototype.forEach.call(document.querySelectorAll('.user-nav__link'), a => {
+let links = document.querySelectorAll('.user-nav__link');
+Array.prototype.forEach.call(links, (a) => {
     a.addEventListener('click', () => {
+        let h = window.location.hash,
+            page = (h.substr(1));
         if (page == "liked") {
             document.querySelector('.user-nav__profile-liked').classList.add('user-nav__link--active');
             document.querySelector('.user-nav__profile-posts').classList.remove('user-nav__link--active');
         } else if (page == "posts") {
-            document.querySelector('.user-nav__profile-liked').classList.remove('user-nav__link--active');
             document.querySelector('.user-nav__profile-posts').classList.add('user-nav__link--active');
+            document.querySelector('.user-nav__profile-liked').classList.remove('user-nav__link--active');
         }
     });
 });
