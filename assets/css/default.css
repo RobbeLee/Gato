@@ -285,7 +285,7 @@ nav {
             font-size: 18px;
             font-weight: 700;
             max-width: 200px;
-            overflow-x: hidden;
+            overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
         }
