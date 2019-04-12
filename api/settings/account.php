@@ -7,7 +7,7 @@ $updates = [];
 $values = [];
 
 if (!isset($_SESSION['id']) && !isset($_POST['submit'])) {
-    header("Location: ../../?lenker");
+    header("Location: ../../");
     exit;
 }
 
@@ -30,6 +30,7 @@ if (!empty($_POST['username'])) {
         $username = $_POST['username'];
         array_push($values, $username);
         array_push($updates, 'username=?');
+        rename("../../u/".strtolower($_SESSION['username']), "../../u/".strtolower($username));
     }
 }
 
