@@ -364,7 +364,7 @@ nav {
     padding-left: 17px;
 }
 
-.form__tekt{
+.form__border{
     border-bottom: #6600ee solid 1px;
     padding-bottom: 20px;
     width: 438px;
@@ -376,16 +376,22 @@ nav {
     font-size: 40px;
     margin-right: 17px;
 }
-.form__file{
-    display: flex;
+.file__label{
     justify-content: center;
-    align-items: center;
-    width: 50%;
+    width: 30%;
     height: 100%;
     background: #fafafa;
     border: 1px dashed rgba(0,0,0,.2);
     cursor: pointer;
     transition: border 200ms ease;
+    margin: 0px 20px;
+    margin: auto;
+}
+.form__button__bottom{
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    padding-top: 30px;
 }
 
 .form__title:after{
@@ -396,6 +402,9 @@ nav {
     width: 200px;
     height: 1px;
     background: #6600ee;
+}
+.form__content__input{
+    padding: 75px 210px;
 }
 
 footer {
