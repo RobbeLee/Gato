@@ -11,13 +11,6 @@ if (!isset($_SESSION['id'])) {
     header("Location: ../");
     exit;
 }
-
-/*
-    Mike - 23/03/19 - Get the country and language from database.
-    Then in both loops check for those 2 and if they match make them have the selected attribute
-*/
-
-//$stmt = $conn->prepare("SELECT country")
 ?>
 
 <!DOCTYPE html>
