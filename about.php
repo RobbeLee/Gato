@@ -17,6 +17,7 @@
 </head>
 <body>
     <?php require 'include/nav.php'; ?>
+    <?php require 'include/postForm.php'; ?>
     <div class="wrapper">
         <div class="section about">
          <h1 class="about__title"> About GATO </h1>
