@@ -6,9 +6,10 @@
                 <h1 class="form__title"> What do you want to post today? </h1>
                 <div class="form__content">
                     <h2 class="form__content__title"> Content </h2>
-                    <input type="text" class="form__content__input" placeholder="What are you thinking about?">
+                    <input type="text" class="form__content__input" placeholder="What is on your mind?">
                 </div>
-                <input type="file">
+                <input class="form__file" type="file">
+                <input class="form__post" type="submit">
             </form>
         </div>
     </div>

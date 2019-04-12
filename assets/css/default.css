@@ -365,6 +365,7 @@ nav {
 
 .form__close{
     float: right;
+    cursor: pointer;
 }
 
 .form__title:after{
