@@ -44,9 +44,5 @@ if (file_exists($path)) {
             <a href="./" target="_blank" id="header__hover" class="header__link">FRIENDS</a>
         </div>
     </div>
-    <?php
-    $sql = "SELECT * FROM posts";
-    
-    ?>
 </body>
 </html>

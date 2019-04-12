@@ -15,6 +15,6 @@ $_PAGE = "index";
     <?php require 'include/nav.php'; ?>
     <div>
     </div>
-    <?php require 'include/footer.php'; ?>
+    <?php// require 'include/footer.php'; ?>
 </body>
 </html>

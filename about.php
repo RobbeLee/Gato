@@ -1,6 +1,6 @@
 <!--- 
 
-    Van Robbe ~ op donderen, als ik je hieraan zie zitten vil ik je levend.
+    Van Robbe ~ op donderen
 
 --->
 
@@ -17,7 +17,6 @@
 </head>
 <body>
     <?php require 'include/nav.php'; ?>
-    <?php require 'include/postForm.php'; ?>
     <div class="wrapper">
         <div class="section about">
          <h1 class="about__title"> About GATO </h1>
