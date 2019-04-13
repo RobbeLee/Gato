@@ -13,6 +13,7 @@ $_PAGE = "index";
 </head>
 <body>
     <?php require 'include/nav.php'; ?>
+    <?php require 'include/postForm.php'; ?>
     <div>
         
     </div>
