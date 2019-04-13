@@ -9,11 +9,11 @@
             </div>
                 <div class="form__content">
                     <h2 class="form__content__title"> Content </h2>
-                    <input type="text-area" class="form__content__input" placeholder="What is on your mind?">
+                    <input type="text-area" class="form__content__input" placeholder="What is on your mind?" id="content">
                 </div>
                 <div class="form__button__bottom">
-                <input type="file" name="file" id="file" style="display:none;" class="file__input">
-                <label for="file" class="file__label">Search Picture</label>
+                <input type="file" name="file" id="file" style="display:none;" class="file__input" id="file ">
+                <label for="file" class="file__label">Upload file</label>
                 <input type="submit" name-="submit" id="submit" style="display:none" value="Submit">
                 <label for="submit" class="file__label">Submit</label>
               </div>

@@ -1,4 +1,7 @@
 <?php
+require '../../include/db.php';
+require '../../include/php_header.php';
+
     // if(isset($_FILES['image'])){
     //     $errors = array();
     //     $file_name = $_FILES['image']['name'];
@@ -48,4 +51,14 @@ if (isset($_FILES['image'])) {
         }
     }
 }
+$content = $_POST['content'];
+$sql = "INSERT INTO posts (content) VALUES (?)"; 
+$stmt->execute([$content]);
+
+$img = $_POST['file'];
+$sql = "INSERT INTO posts (img) VALUES (id)";
+$stmt->execute([$file]);
+
+header("Location: ../../index.php");
+die();
 ?>
