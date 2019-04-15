@@ -32,7 +32,17 @@ require '../../include/php_header.php';
     //    print_r($errors);
     // }
 
-if (isset($_FILES['image'])) {
+if (!isset($_POST['submit']) || !isset($_SESSION['id'])) {
+    exit;
+}
+
+if (empty($_POST['msg'])) {
+    exit;
+}
+
+$uniqueid = NULL;
+
+if ($_FILES['file']['size'] > 0) {
     if(!file_exists($_FILES['file']['tmp_name']) || !is_uploaded_file($_FILES['file']['tmp_name'])) {
         echo "Sorry, you haven't chosen a file";
     } else {
@@ -45,20 +55,27 @@ if (isset($_FILES['image'])) {
             if ($_FILES['file']['size'] > 5097152) {
                 echo "Your file is too big, sorry.";
             } else {
-                $path = "../../assets/userfiles/imgs/".$_SESSION['id'].".webp";
+                $uniqueid = uniqid('', true);
+                $path = "../../assets/userfiles/imgs/".$uniqueid.".webp";
                 move_uploaded_file($_FILES['file']['tmp_name'], $path);
             }
         }
     }
 }
-$content = $_POST['content'];
-$sql = "INSERT INTO posts (content) VALUES (?)"; 
-$stmt->execute([$content]);
 
-$img = $_POST['file'];
-$sql = "INSERT INTO posts (img) VALUES (id)";
-$stmt->execute([$file]);
+$msg = filter_var($_POST['msg'], FILTER_VALIDATE_STRING);
+$date = new DateTime('Y-m-d H:i:s');
 
-header("Location: ../../index.php");
-die();
+if (count($msg) < 240) {
+    exit; // te veel character
+}
+
+$stmt = $conn->prepare("INSERT INTO posts (uid, uniqueid, content, date) VALUES (?, ?, ?, ?);");
+
+if (!$stmt->execute([$_SESSION['id'], $uniqueid, $msg, $date])) {
+    exit; // werkt?
+}
+
+header("Location: ../../");
+die; //mood
 ?>

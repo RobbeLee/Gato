@@ -404,7 +404,9 @@ nav {
     background: #6600ee;
 }
 .form__content__input{
-    padding: 75px 210px;
+    width: 97%;
+    height: 160px;
+    padding: 20px;
 }
 
 footer {
