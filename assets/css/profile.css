@@ -9,9 +9,9 @@
     flex-direction: column;
 }
 
-#container img {
-    width: 250px;
-    border-radius: 50%;
+.header__pfp {
+    height: 100%;
+    width: 100%;
 }
 
 #container {
@@ -24,9 +24,9 @@
 #header__links-container{
     display: flex;
     justify-content: center;
-    margin: 0;
     align-items: center;
     width: 100%;
+    margin-top: 50px;
 }
 
 #header__hover::after {
@@ -76,9 +76,22 @@
     flex-wrap: wrap;
 }
 
+.header__pfp-container {
+    width: 250px;
+    height: 250px;
+    border-radius: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right:60px;
+}
+
 #header__info {
-    padding-top: 100px;
-    padding-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
 }
 
 .header__username {

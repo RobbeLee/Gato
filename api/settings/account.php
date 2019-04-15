@@ -30,7 +30,7 @@ if (!empty($_POST['username'])) {
         $username = $_POST['username'];
         array_push($values, $username);
         array_push($updates, 'username=?');
-        rename("../../u/".strtolower($_SESSION['username']), "../../u/".strtolower($username));
+        rename("../../u/".strtolower($_SESSION['username']).".php", "../../u/".strtolower($username).".php");
     }
 }
 
@@ -44,7 +44,7 @@ if (!empty($_POST['email'])) {
     }
 }
 
-if (!empty($_FILES['file'])) {
+if ($_FILES['file']['size'] > 0) {
     if(!file_exists($_FILES['file']['tmp_name']) || !is_uploaded_file($_FILES['file']['tmp_name'])) {
         array_push($errors, 'File does not exist.');
     } else {

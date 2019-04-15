@@ -55,6 +55,17 @@ if ($foundEmail == $email) {
     exit;
 }
 
+$stmt = $conn->prepare("SELECT * FROM users WHERE username=?");
+$stmt->execute([$username]);
+$result = $stmt->fetch();
+
+$foundUsername = $result['username'];
+
+if ($foundUsername == $username) {
+    header("Location: ../../signup?error=4");
+    exit;
+}
+
 $path = "../../u/".strtolower($username).".php";
 $content = "<?php require '../include/profile.php';"; // Will be made later
 file_put_contents($path, $content);
@@ -62,18 +73,6 @@ file_put_contents($path, $content);
 $stmt = $conn->prepare("INSERT INTO users (name, username, email, password, created, ip) VALUES (?, ?, ?, ?, ?, ?)");
 
 if (!$stmt->execute([$name, $username, $email, $password, $created, $ip])) {
-    echo "<h1>Fatal query error encountered.<br>Please come again</h1>";
-    exit;
-    die;
-}
-
-$stmt = $conn->prepare("SELECT id FROM users WHERE username=?;");
-$stmt->execute([$username]);
-$result = $stmt->fetch();
-
-$stmt = $conn->prepare("INSERT INTO user_settings (user_id, location, language) VALUES (?, ?, ?);");
-
-if (!$stmt->execute([$result[0], 'United States', 'US'])) {
     echo "<h1>Fatal query error encountered.<br>Please come again</h1>";
     exit;
     die;

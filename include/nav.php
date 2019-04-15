@@ -5,7 +5,8 @@
 -->
 
 <?php
-$path = "assets/userfiles/pfp/".$_SESSION['id'].".webp";
+$path = "assets/userfiles/pfp/default.webp";
+if (isset($_SESSION['id'])) $path = "assets/userfiles/pfp/".$_SESSION['id'].".webp";
 if ($subFolder) $path = "../".$path;
 if (file_exists($path)) {
     $pfp = $path;
