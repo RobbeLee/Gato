@@ -63,10 +63,10 @@ if ($_FILES['file']['size'] > 0) {
     }
 }
 
-$msg = filter_var($_POST['msg'], FILTER_VALIDATE_STRING);
-$date = new DateTime('Y-m-d H:i:s');
+$msg = $_POST['msg'];
+$date = date('Y-m-d H:i:s');
 
-if (count($msg) < 240) {
+if (strlen($msg) > 240) {
     exit; // te veel character
 }
 

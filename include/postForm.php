@@ -11,7 +11,7 @@
                     <input type="text-area" name="msg" class="form__content__input" placeholder="What is on your mind?" id="content">
                 </div>
                 <div class="form__button__bottom">
-                    <button type="file" name="file" id="file" class="file__label">Upload File</button>
+                    <input type="file" name="file" id="file" class="file__label"/>
                     <button type="submit" name="submit" class="button">Submit</button>
                 </div>
             </div>
