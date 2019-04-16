@@ -29,7 +29,7 @@ if (file_exists($path)) {
     <div class="header" id="container"> 
         <div class="header__body">
             <div class="header__pfp-container" id="container__pfp">
-                <img class="header__pfp" src="<?=$userPfp?>" alt="error" class="container__pfp">
+                <img class="header__pfp container__pfp" src="<?=$userPfp?>" alt="error">
             </div>
             <div id="header__info">
                 <h2 class="header__username">@<?=$result['username']; ?></h2>
