@@ -2,22 +2,19 @@
     <div id="form-container">
         <div id="modal" class="form">
             <span class="form__close">&times;</span>
-            <form enctype="multipart/form-data" method="post" action="<?php if ($subFolder) echo "../"; ?>api/post/makePost.php">
+                 <form enctype="multipart/form-data" method="post" action="<?php if ($subFolder) echo "../"; ?>api/post/makePost.php">
             <div class="form__text">
                 <div class="form__border">
-                <h1 class="form__title"> What do you want to post today? </h1>
-            </div>
+                    <h1 class="form__title"> What do you want to post today? </h1>
+                </div>
                 <div class="form__content">
-                    <h2 class="form__content__title"> Content </h2>
                     <input type="text-area" name="msg" class="form__content__input" placeholder="What is on your mind?" id="content">
                 </div>
                 <div class="form__button__bottom">
-                <input type="file" name="file" id="file" style="display:none;" class="file__input" id="file">
-                <label for="file" class="file__label">Upload file</label>
-                <button type="submit" name="submit" class="file__label">Submit</button>
-              </div>
-            </form>
-        </div>
+                    <button type="file" name="file" id="file" class="file__label">Upload File</button>
+                    <button type="submit" name="submit" class="button">Submit</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
