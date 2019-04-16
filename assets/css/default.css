@@ -379,7 +379,7 @@ nav {
     margin-right: 17px;
 }
 
-.file__label{
+.file__label2{
     justify-content: center;
     width: 300px;
     height: 40px;
@@ -391,6 +391,17 @@ nav {
     margin: auto;
     font-weight: 700;
     font-size: 24px;
+}
+.file__label{
+    justify-content: center;
+    width: 300px;
+    height: 40px;
+    background: #fafafa;
+    border: 1px dashed rgba(0,0,0,.2);
+    cursor: pointer;
+    transition: border 200ms ease;
+    margin: 0px 20px;
+    margin: auto;
 }
 
 .form__button__bottom{
