@@ -354,11 +354,12 @@ nav {
 
 .form{
     background: #fff;
-    width: 560px;
-    height: 40vh;
+    width: 700px;
+    height: 400px;
     margin: 20px;
     padding: 0;
 }
+
 .form__text{
     padding-top: 10px;
     padding-left: 17px;
@@ -369,6 +370,7 @@ nav {
     padding-bottom: 20px;
     width: 438px;
 }
+
 .form__close{
     float: right;
     cursor: pointer;
@@ -376,37 +378,36 @@ nav {
     font-size: 40px;
     margin-right: 17px;
 }
+
 .file__label{
     justify-content: center;
-    width: 30%;
-    height: 100%;
+    width: 300px;
+    height: 40px;
     background: #fafafa;
     border: 1px dashed rgba(0,0,0,.2);
     cursor: pointer;
     transition: border 200ms ease;
     margin: 0px 20px;
     margin: auto;
+    font-weight: 700;
+    font-size: 24px;
 }
+
 .form__button__bottom{
     text-align: center;
     display: flex;
     flex-direction: row;
-    padding-top: 30px;
+    padding-top: 60px;
 }
 
-.form__title:after{
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 200px;
-    height: 1px;
-    background: #6600ee;
-}
 .form__content__input{
-    width: 97%;
+    width: 580px;
     height: 160px;
     padding: 20px;
+    margin-top: 20px;
+    margin-left: 40px;
+    border: none;
+    border-bottom: 1px solid #000;
 }
 
 footer {
@@ -415,6 +416,36 @@ footer {
     padding: 20px 0;
     text-align: center;
     margin-top: 120px;
+}
+.button { 
+	color: #fff;
+	font-size: 24px;
+	font-weight: 700;
+	text-transform: uppercase;
+    padding: 10px 54px;
+	border-radius: 40px;
+	background: #000;
+	position: relative;
+	overflow: hidden;
+    z-index: 1;
+    margin-right: 100px;
+}
+
+.button::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 250px;
+	height: 140px;
+	background: #6600ee;
+	z-index: -1;
+	transform: rotate(25deg) translate(-265px, -32px);
+	transition: transform 250ms ease;
+}
+
+.button:hover::after {
+	transform: rotate(25deg) translate(-24px, -32px);
 }
 .footer__title{
     font-size: 18px;
