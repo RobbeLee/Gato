@@ -28,6 +28,18 @@ if (!empty($_POST['username'])) {
         array_push($errors, 'Your username cannot be longer than 60 characters.');
     } else {
         $username = $_POST['username'];
+        $stmt = $conn->prepare("SELECT * FROM users WHERE username=? LIMIT 1");
+        if (!$stmt->execute([$username])) {
+            echo "Error";
+            exit;
+        }
+        $result = $stmt->fetch();
+        if ($stmt->rowCount() > 0) {
+            if ($result['username'] == $username) {
+                array_push($errors, 'Username already exists.');
+                exit;
+            }
+        }
         array_push($values, $username);
         array_push($updates, 'username=?');
         rename("../../u/".strtolower($_SESSION['username']).".php", "../../u/".strtolower($username).".php");
@@ -38,7 +50,19 @@ if (!empty($_POST['email'])) {
     if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
         array_push($errors, 'Your email is invalid.');
     } else {
-        $email = $_POST['email'];
+        $email = strtolower($_POST['email']);
+        $stmt = $conn->prepare("SELECT * FROM users WHERE email=? LIMIT 1");
+        if (!$stmt->execute([$email])) {
+            echo "Error";
+            exit;
+        }
+        $result = $stmt->fetch();
+        if ($stmt->rowCount() > 0) {
+            if ($result['email'] == $email) {
+                array_push($errors, 'Email already exists.');
+                exit;
+            }
+        }
         array_push($values, $email);
         array_push($updates, 'email=?');
     }
