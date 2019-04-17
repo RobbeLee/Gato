@@ -67,7 +67,7 @@ $msg = $_POST['msg'];
 $date = date('Y-m-d H:i:s');
 
 if (strlen($msg) > 240) {
-    exit; // te veel character
+    exit; // te veel characte
 }
 
 $stmt = $conn->prepare("INSERT INTO posts (uid, uniqueid, content, date) VALUES (?, ?, ?, ?);");

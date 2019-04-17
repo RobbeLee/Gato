@@ -1,6 +1,6 @@
 <?php
 require 'include/php_header.php';
-    require 'include/db.php';
+require 'include/db.php';
 
     if (!isset($_GET['q']) || empty($_GET['q'])) {
         header("Location: ./");
@@ -13,7 +13,7 @@ require 'include/php_header.php';
     $_TITLE = $_GET['q']." | Search | ".$_BRAND;
     $_PAGE = "search";
 
-    $sql = "SELECT * FROM posts WHERE content LIKE concat('%', '?', '%') OR username LIKE concat('%', '?', '%')"; // concat('%', '?', '%') =='%$q%'
+    $sql = "SELECT * FROM posts WHERE content LIKE concat('%', '?', '%') OR uid LIKE concat('%', '?', '%')"; // concat('%', '?', '%') =='%$q%'
     $stmt = $conn->prepare($sql);
 
     if (!$stmt->execute([$q, $q])) {
