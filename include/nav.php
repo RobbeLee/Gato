@@ -16,22 +16,13 @@ if (file_exists($path)) {
 }
 ?>
 <nav>
-
-
-
-
-
-<div class="nav__hamburger">
-
-        <div class="nav__left-container">
-                <h1 class="nav__title" title="<?=$_BRAND; ?>"><?=$_BRAND; ?></h1>
-                <a href="<?php if ($subFolder) echo "."; ?>./" title="Home" class="nav__link">home</a>
-                <a href="<?php if ($subFolder) echo "../"; ?>about" title="About" class="nav__link">about</a>
+    <div class="nav__left-container">
+        <h1 class="nav__title" title="<?=$_BRAND; ?>"><?=$_BRAND; ?></h1>
+        <a href="<?php if ($subFolder) echo "."; ?>./" title="Home" class="nav__link">home</a>
+        <a href="<?php if ($subFolder) echo "../"; ?>about" title="About" class="nav__link">about</a>
     </div>
-</div>
-
-    <?php if (isset($_SESSION['id'])): ?>
     <div class="nav__right-container">
+    <?php if (isset($_SESSION['id'])): ?>
         <form class="nav__form" action="<?php if ($subFolder) echo "."; ?>./search" method="get">
             <input class="nav__input" type="text" name="q" placeholder="Search" title="Search" autocomplete="off" autocorrect="off" spellcheck="false" autocapitalize="none"/>
             <button type="submit" title="Search" class="nav__search-btn">
@@ -43,9 +34,7 @@ if (file_exists($path)) {
         <button class="nav__pfp-container" id="pfp-toggle" title="<?=$_SESSION['name'];?>">
             <img src="<?=$pfp?>" alt="error" class="nav__pfp">
         </button>
-    </div>
     <?php else: ?>
-    <div class="nav__right-container">
         <form class="nav__form" action="<?php if ($subFolder) echo "../"; ?>search" method="get">
             <input class="nav__input" type="text" name="q" placeholder="Search" title="Search" autocomplete="off" autocorrect="off" spellcheck="false" autocapitalize="none"/>
             <button type="submit" class="nav__search-btn">
@@ -54,8 +43,19 @@ if (file_exists($path)) {
         </form>
         <a href="<?php if ($subFolder) echo "../"; ?>login" title="Login" class="nav__login-btn">login</a>
         <a href="<?php if ($subFolder) echo "../"; ?>signup" title="Sign Up" class="nav__signup-btn">sign up</a>
-    </div>
     <?php endif; ?>
+        <div class="nav__hamburger">
+            <input class="nav__checkbox" type="checkbox"/>
+            <label class="nav__" for="nav__checkbox">
+                <span class="line line1"></span>
+                <span class="line line2"></span>
+                <span class="line line3"></span>
+            </label>
+            <div class="ham-nav">
+
+            </div>
+        </div>
+    </div>
 </nav>
 
 <?php if (isset($_SESSION['id'])): ?>

@@ -82,7 +82,7 @@ nav {
             align-items: center;
             overflow: hidden;
         }
-
+      
         .nav__link::after {
             content: '';
             position: absolute;
@@ -254,6 +254,11 @@ nav {
             transform: rotate(35deg) translate(-25px, -25px);
         }
 
+@media screen and (max-width: 950px){
+    .nav__right-container {
+        display: none;
+    }
+}
 .user-nav {
     position: fixed;
     top: 70px;
