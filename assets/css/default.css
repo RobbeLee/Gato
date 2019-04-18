@@ -279,7 +279,7 @@ nav {
 
 .nav-links-container {
     position: fixed;
-    top: 0;
+    top: 65px;
     left: 0;
     right: 0;
     bottom: 0;
@@ -294,7 +294,6 @@ nav {
     transform: translateX(100vw);
     transition: transform 0.5s ease;
     z-index: 50;
-    margin-top: 65px;
 }
 
 .nav-link {
@@ -573,6 +572,8 @@ nav {
     display: flex;
     justify-content: center;
     padding-bottom: 10px;
+    flex-direction: column;
+    align-items: center;
 }
 
 .iForm__border{
@@ -621,11 +622,12 @@ nav {
 }
 
 .post{
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 400px;
     background: #f4f4f4;
-    border-radius: 12px;
+    border-radius: 4px;
     box-shadow: 0 3px 8px -8px #000;
+    margin-bottom: 60px;
 }
 
 .post__img-container{

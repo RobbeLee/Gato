@@ -28,16 +28,17 @@ $_PAGE = "index";
                             placeholder="What is on your mind?" id="content">
                     </div>
                     <div class="iForm__button__bottom">
-                        <input type="file" name="file" id="file" class="file__label" />
+                        <input type="file" name="file" id="file" class="file__label"/>
                         <button type="submit" name="submit" class="iForm__btn">Submit</button>
                     </div>
                 </div>
             </form>
-        </div>
+        </div> 
     </div>
     <div class="wrapper-post">
         <?php 
-            $stmt = $conn->prepare("SELECT * FROM posts;");
+            $stmt = $conn->prepare("SELECT * FROM posts ORDER BY id DESC");
+            
             $stmt->execute();
             $posts = $stmt->fetchAll();
             foreach ($posts as $post): 

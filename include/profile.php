@@ -43,8 +43,8 @@ if (file_exists($path)) {
         </div>
     </div>
     <div class="container posts">
-        <?php 
-            $stmt = $conn->prepare("SELECT * FROM posts WHERE uid=?;");
+        <?php
+            $stmt = $conn->prepare("SELECT * FROM posts WHERE uid=? ORDER BY id DESC;");
             $stmt->execute([$result['id']]);
             $posts = $stmt->fetchAll();
 
