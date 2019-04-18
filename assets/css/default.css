@@ -587,7 +587,6 @@ footer {
 	position: relative;
 	overflow: hidden;
     z-index: 1;
-    margin-right: 100px;
 }
 
 .button::after {
