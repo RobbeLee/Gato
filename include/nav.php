@@ -43,20 +43,39 @@ if (file_exists($path)) {
         </form>
         <a href="<?php if ($subFolder) echo "../"; ?>login" title="Login" class="nav__login-btn">login</a>
         <a href="<?php if ($subFolder) echo "../"; ?>signup" title="Sign Up" class="nav__signup-btn">sign up</a>
-    <?php endif; ?>
-        <div class="nav__hamburger">
-            <input class="nav__checkbox" type="checkbox"/>
-            <label class="nav__" for="nav__checkbox">
-                <span class="line line1"></span>
-                <span class="line line2"></span>
-                <span class="line line3"></span>
-            </label>
-            <div class="ham-nav">
-
-            </div>
+    <?php endif; ?>            
+    </div>
+    <div class="nav__hamburger">
+        <input type="checkbox" id="nav-toggle" style="display:none;"/>
+        <label class="nav__ham-toggle" for="nav-toggle">
+            <span class="line line1"></span>
+            <span class="line line2"></span>
+            <span class="line line3"></span>
+        </label>
+        <div class="nav-links-container">
+            <form class="nav__form" style="margin: 0;" action="<?php if ($subFolder) echo "../"; ?>search" method="get">
+                <input class="nav__input" type="text" name="q" placeholder="Search" title="Search" autocomplete="off" autocorrect="off" spellcheck="false" autocapitalize="none"/>
+                <button type="submit" class="nav__search-btn">
+                    <svg viewBox="0 0 18 18"><path d="m 9.3962688,9.5396955 3.1875032,3.1165125 4.685825,4.581467 Z M 10.126225,9.276927 C 10.957192,8.2289874 11.351645,6.8454225 11.198222,5.5168348 11.044799,4.188247 10.345391,2.930999 9.2974515,2.1000317 8.249512,1.2690645 6.8659471,0.87461216 5.5373593,1.0280348 4.2087716,1.1814574 2.9515235,1.8808656 2.1205563,2.9288052 1.2895891,3.9767448 0.89513671,5.3603097 1.0485594,6.6888974 1.201982,8.0174852 1.9013902,9.2747332 2.9493298,10.1057 c 1.0479395,0.830968 2.4315044,1.22542 3.7600922,1.071997 1.3285877,-0.153422 2.5858358,-0.85283 3.416803,-1.90077 z" /></svg>
+                </button>
+            </form>
+            <a class="nav-link" href="../">Home</a>
+            <a class="nav-link" href="./">About</a>
+                <?php if (isset($_SESSION['id'])): ?>
+                    <span class="nav-linkmy" id="myaccount">My Account</span>
+                        <a href="<?php if ($subFolder) echo "../"; ?>u/<?php echo strtolower($_SESSION['username']); ?>" title="My Profile" class="nav-link__acount">- my profile</a>
+                        <a href="<?php if ($subFolder) echo "../"; ?>u/<?php echo strtolower($_SESSION['username']); ?>#posts" title="My Posts" class="nav-link__acount">- my posts</a>
+                        <a href="<?php if ($subFolder) echo "../"; ?>u/<?php echo strtolower($_SESSION['username']); ?>#liked" title="Liked Posts" class="nav-link__acount">- liked posts</a>
+                        <a href="<?php if ($subFolder) echo "../"; ?>account/settings" title="Settings" class="nav-link__acount">- settings</a>
+                        <a href="<?php if ($subFolder) echo "../"; ?>logout" title="Sign Out" class="nav-link__acount">- sign out</a>
+            <?php else: ?>
+                <a href="<?php if ($subFolder) echo "../"; ?>login" title="Login" class="nav-link">login</a>
+                <a href="<?php if ($subFolder) echo "../"; ?>signup" title="Sign Up" class="nav-link">sign up</a>
+            <?php endif; ?>            
         </div>
     </div>
 </nav>
+
 
 <?php if (isset($_SESSION['id'])): ?>
 <div class="user-nav" id="user-nav">
@@ -65,7 +84,7 @@ if (file_exists($path)) {
         <span class="user-nav__email" title="<?=$_SESSION['email']; ?>"><?=$_SESSION['email']; ?></span>
     </div>
     <div class="user-nav__body">
-        <a href="<?php if ($subFolder) echo "../"; ?>u/<?php echo strtolower($_SESSION['username']); ?>" title="My Profile" class="user-nav__link <?php if ($_PAGE == "profile" && $user == strtolower($_SESSION['username'])) echo "user-nav__link--active"; ?>"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg><span class="user-nav__link-span">my profile</span></a>
+        <a href="<?php if ($subFolder) echo "../"; ?>u/<?php echo strtolower($_SESSION['username']); ?>" title="My Profile" class="user-nav__link" <?php if ($_PAGE == "profile" && $user == strtolower($_SESSION['username'])) echo "user-nav__link--active"; ?>"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg><span class="user-nav__link-span">my profile</span></a>
         <a href="<?php if ($subFolder) echo "../"; ?>u/<?php echo strtolower($_SESSION['username']); ?>#posts" title="My Posts" class="user-nav__link user-nav__profile-posts"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M4 14h4v-4H4v4zm0 5h4v-4H4v4zM4 9h4V5H4v4zm5 5h12v-4H9v4zm0 5h12v-4H9v4zM9 5v4h12V5H9z"/></svg><span class="user-nav__link-span">my posts</span></a>
         <a href="<?php if ($subFolder) echo "../"; ?>u/<?php echo strtolower($_SESSION['username']); ?>#liked" title="Liked Posts" class="user-nav__link user-nav__profile-liked"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg><span class="user-nav__link-span">liked posts</span></a>
         <a href="<?php if ($subFolder) echo "../"; ?>account/settings" title="Settings" class="user-nav__link <?php if ($_PAGE == "settings") echo "user-nav__link--active"; ?>"><svg width="20" height="20" viewBox="0 0 20 20"><path d="M15.95 10.78c.03-.25.05-.51.05-.78s-.02-.53-.06-.78l1.69-1.32c.15-.12.19-.34.1-.51l-1.6-2.77c-.1-.18-.31-.24-.49-.18l-1.99.8c-.42-.32-.86-.58-1.35-.78L12 2.34c-.03-.2-.2-.34-.4-.34H8.4c-.2 0-.36.14-.39.34l-.3 2.12c-.49.2-.94.47-1.35.78l-1.99-.8c-.18-.07-.39 0-.49.18l-1.6 2.77c-.1.18-.06.39.1.51l1.69 1.32c-.04.25-.07.52-.07.78s.02.53.06.78L2.37 12.1c-.15.12-.19.34-.1.51l1.6 2.77c.1.18.31.24.49.18l1.99-.8c.42.32.86.58 1.35.78l.3 2.12c.04.2.2.34.4.34h3.2c.2 0 .37-.14.39-.34l.3-2.12c.49-.2.94-.47 1.35-.78l1.99.8c.18.07.39 0 .49-.18l1.6-2.77c.1-.18.06-.39-.1-.51l-1.67-1.32zM10 13c-1.65 0-3-1.35-3-3s1.35-3 3-3 3 1.35 3 3-1.35 3-3 3z"/></svg><span class="user-nav__link-span">settings</span></a>
