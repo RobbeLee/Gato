@@ -76,7 +76,6 @@
     padding: 20px 10px;
 }
 
-
 #container {
     background-color: #fafafa;
     -webkit-box-shadow: 0 3px 10px -8px black;
@@ -89,7 +88,6 @@
     float: right;
     margin-right: 33%;
 }
-
 
 .user-nav__username {
     margin-bottom: 20px;
