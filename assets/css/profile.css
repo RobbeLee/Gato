@@ -180,7 +180,7 @@
 
 .post__img-container {
     width: 100%;
-    height: fit-content;
+    height: 300px;
     max-height: 160px;
     overflow: hidden;
     display: flex;
