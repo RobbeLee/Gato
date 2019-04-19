@@ -44,7 +44,7 @@ if (isset($_GET['error'])) {
         <h2>Registration</h2>
         </div>
         <?php if (isset($_GET['error'])): ?>
-        <span><?=$message?></span>
+        <span><?=htmlspecialchars($message)?></span>
         <?php endif; ?>
         <form method="POST" action="api/account/signup.php">
             <input type="email" name="email" placeholder="Email" class="div__container__info" required>
