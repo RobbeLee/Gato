@@ -84,9 +84,21 @@ if ($_FILES['file']['size'] > 0) {
                 if (file_exists('../../assets/userfiles/pfp/'.$_SESSION['id'].'.webp')) {
                     unlink('../../assets/userfiles/pfp/'.$_SESSION['id'].'.webp');
                 }
+                require 'ImageManipulator.php';
                 $path = "../../assets/userfiles/pfp/".$_SESSION['id'].".webp";
-                move_uploaded_file($_FILES['file']['tmp_name'], $path);
-                imagecrop($path, ['x' => 0, 'y' => 0, 'width' => 100, 'height' => 100]);
+
+                $im = new ImageManipulator($_FILES['file']['tmp_name']);
+                $centreX = round($im->getWidth() / 2);
+                $centreY = round($im->getHeight() / 2);
+
+                $x1 = $centreX - 200;
+                $y1 = $centreY - 200;
+
+                $x2 = $centreX + 200;
+                $y2 = $centreY + 200;
+
+                $im->crop($x1, $y1, $x2, $y2); // takes care of out of boundary conditions automatically
+                $im->save($path);
             }
         }
     }
