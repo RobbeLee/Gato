@@ -38,11 +38,11 @@ $_PAGE = "index";
         <div class="post">
             <?php if (!is_null($post['uniqueid'])): ?>
             <div class="post__img-container">
-                <img src="./assets/userfiles/imgs/<?=$post['uniqueid']?>.webp" class="post__img">
+                <img src="./assets/userfiles/imgs/<?=htmlspecialchars($post['uniqueid'])?>.webp" class="post__img">
             </div>
             <?php endif; ?>
             <div class="post__content-container">
-                <p class="post__content"><?=$post['content']?></p>
+                <p class="post__content"><?=htmlspecialchars($post['content'])?></p>
             </div>
         </div>
         <?php endforeach; ?>
