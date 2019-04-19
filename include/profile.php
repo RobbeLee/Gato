@@ -52,22 +52,22 @@ if (file_exists($path)) {
                 <div class="post" <?php if (is_null($post['uniqueid'])) echo 'style="height:150px;"'; ?>>
                         <?php if (!is_null($post['uniqueid'])): ?>
                             <div class="post__img-container">
-                                <img src="../assets/userfiles/imgs/<?=$post['uniqueid']?>.webp" alt="error" class="post__img">
+                                <img src="../assets/userfiles/imgs/<?=htmlspecialchars($post['uniqueid'])?>.webp" alt="error" class="post__img">
                             </div>
                         <?php endif; ?>
                     <p class="post__content">
-                        <?=$post['content']?>
+                        <?=htmlspecialchars($post['content'])?>
                     </p>
                     <div class="post__body">
                         <div class="post__pfp-container">
-                            <img class="post__pfp" src="<?=$userPfp?>" alt="<?=$result['name']?>" title="<?=$result['name']?>">
+                            <img class="post__pfp" src="<?=htmlspecialchars($userPfp)?>" alt="<?=htmlspecialchars($result['name'])?>" title="<?=htmlspecialchars($result['name'])?>">
                         </div>
                         <div class="post__user-container">
                             <div style="display:flex;flex-direction:column;">
-                                <span class="post__name"><?=$result['name']?></span>
-                                <span class="post__username">@<?=$result['username']?></span>
+                                <span class="post__name"><?=htmlspecialchars($result['name'])?></span>
+                                <span class="post__username">@<?=htmlspecialchars($result['username'])?></span>
                             </div>
-                            <span class="post__date"><?php echo date('F d, Y', strtotime($post['date'])); ?></span>
+                            <span class="post__date"><?php echo htmlspecialchars(date('F d, Y', strtotime($post['date']))); ?></span>
                         </div>
                     </div>
                 </div>

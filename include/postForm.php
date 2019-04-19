@@ -1,25 +1,4 @@
-<!--<div id="myModal" style="display:none;">
-    <div id="form-container">
-        <div id="modal" class="form">
-            <span class="form__close">X</span>
-                 <form enctype="multipart/form-data" method="post" action="api/post/makePost.php">
-            <div class="form__text">
-                <div class="form__border">
-                    <h1 class="form__title"> What do you want to post today? </h1>
-                </div>
-                <div class="form__content">
-                    <textarea type="text" name="msg" class="form__content__input" placeholder="What is on your mind?" id="content"></textarea>
-                </div>
-                <div class="form__button__bottom">
-                    <input type="file" name="file" id="file" style="display:none;"/>
-                    <label for="file" class="form__button__label">Upload Picture</label>
-                    <button type="submit" name="submit" class="button">Submit</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>-->
-
+<?php if (isset($_SESSION['id'])): ?>
 <div class="postmodal" id="postmodal" style="display:none;">
     <form action="<?php if ($subFolder) echo "../"; ?>api/post/makePost.php" enctype="multipart/form-data" method="post" class="postmodal__form">
         <span class="postmodal__close" id="postmodal__close">X</span>
@@ -52,4 +31,5 @@
         postmodalOpen ? postmodal.style.display = "none" : postmodal.style.display = "flex";
         postmodalOpen ? postmodalOpen = false : postmodalOpen = true;
     })
-</script> 
+</script>
+<?php endif; ?>
