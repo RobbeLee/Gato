@@ -10,31 +10,23 @@ $_PAGE = "index";
 <html>
 <head>
     <?php require 'include/meta.php'; ?>
-    <link rel="stylesheet" href="assets/css/index.css">
 </head>
 <body>
     <?php require 'include/nav.php'; ?>
-    <?php require 'include/postForm.php'; ?>
-    <div class="wrapper-form">
-        <div class="iForm__container">
-            <form enctype="multipart/form-data" method="post"
-                action="<?php if ($subFolder) echo "../"; ?>api/post/makePost.php">
-                <div class="iForm__text">
-                        <h1 class="iForm__title">WHAT'S HAPPENING</h1>
-                    </div>
-                    <div class="iForm__content">
-                    <textarea name="msg" class="iForm__content__input" cols="30" rows="10" id="content" placeholder="MESSAGE"></textarea>
-                    </div>
-                <div class="iform__test">
-                    <div class="iForm__button_bottom">
-                        <input type="file" name="file" id="file" class="file__label" />
-                        <button type="submit" name="submit" class="iForm__btn">POST</button>
-                    </div>
-            </form>
-            <button class="nav__btn" id="sortby" title="Sort By"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M3 18h6v-2H3v2zM3 6v2h18V6H3zm0 7h12v-2H3v2z"/><path d="M0 0h24v24H0z" fill="none"/></svg></button>
-            </div> 
-        </div>
-    </div>
+    <?php require 'include/postForm.php'; ?>    
+        <div class="wrapper-form">
+                <form action="<?php if ($subFolder) echo "../"; ?>api/post/makePost.php" enctype="multipart/form-data" method="post">
+                <h2 class="postmodal__title">What do you want to post today?</h2>
+            <div class="postmodal__input-container">
+                <textarea class="postmodal__textarea" name="msg" placeholder="Message..."></textarea>
+                    <div class="postmodal__footer">
+                    <input type="file" name="file" id="file" style="display:none;">
+                    <label for="file" class="postmodal__label">Upload Picture</label>
+                    <button type="submit" name="submit" class="postmodal__btn" id="postmodal__btn">post</button>
+            </div>  
+           </div>
+        </form>
+</div>   
     <div class="wrapper-post">
         <?php 
             $stmt = $conn->prepare("SELECT * FROM posts ORDER BY id DESC");

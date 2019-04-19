@@ -32,7 +32,7 @@ if ($_FILES['file']['size'] > 0) {
         }
     }
 }
-
+ 
 $msg = $_POST['msg'];
 $date = date('Y-m-d H:i:s');
 
