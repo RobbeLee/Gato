@@ -90,7 +90,7 @@ nav {
             width: 80%;
             height: 4px;
             background: #6600ee;
-            transform: translateY(4px);
+            transform: translateY(5px);
             transition: transform 200ms ease;
             border-radius: 8px 8px 0 0;
         }
@@ -439,7 +439,7 @@ nav {
             font-size: 16px;
             font-weight: 500;
             max-width: 200px;
-            overflow-x: hidden;
+            overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
         }
