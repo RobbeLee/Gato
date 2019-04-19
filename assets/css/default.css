@@ -564,6 +564,7 @@ nav {
     margin-left: 40px;
     border: none;
     border-bottom: 1px solid #000;
+    resize: none;
 }
 footer {
     background: #f0f0f0;

@@ -8,24 +8,20 @@ require 'include/db.php';
     }
 
     $q = $_GET['q'];
-    
+    $found = true;
     $subFolder = false;
     $_TITLE = $_GET['q']." | Search | ".$_BRAND;
     $_PAGE = "search";
 
-    $sql = "SELECT * FROM posts WHERE content LIKE concat('%', '?', '%') OR uid LIKE concat('%', '?', '%')"; // concat('%', '?', '%') =='%$q%'
+    $sql = "SELECT * FROM posts WHERE content LIKE concat('%', ?, '%');";
     $stmt = $conn->prepare($sql);
 
-    if (!$stmt->execute([$q, $q])) {
+    if (!$stmt->execute([$q])) {
         echo "FATAL ERROR: ";
         exit;
     }
 
-    $result = $stmt->fetchAll();
 
-    if ($stmt->rowCount() == 0) {
-        $found = false;
-    }
     ?>
 <!DOCTYPE html>
 <html>
@@ -42,8 +38,12 @@ require 'include/db.php';
         foreach($result as $post): ?>
             <div class="tets"><?=$post['username']?></div>
         <?php endforeach;
+    }    
+
+    if ($result = true){
+       echo "";
     }
     ?>
     </div>
-</body>
+</body> 
 </html>

@@ -27,9 +27,7 @@ $_PAGE = "index";
                     </div>
                 <div class="iform__test">
                     <div class="iForm__button_bottom">
-                    <input type="file" name="file" id="file" style="display:none;" class="post__img-container">
-                        <label for="file" class="post__img-container">Upload Picture</label>
-                        <span id="pfp-input-value" class="post__img-container"></span>
+                        <input type="file" name="file" id="file" class="file__label" />
                         <button type="submit" name="submit" class="iForm__btn">POST</button>
                     </div>
             </form>
