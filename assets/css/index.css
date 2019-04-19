@@ -50,6 +50,18 @@
 	transform: rotate(25deg) translate(-265px, -32px);
 	transition: transform 250ms ease;
 }
+.iForm__container{
+    border-bottom: 1px solid #00000020;
+}
+.iForm__container border{
+    padding-top: 40px;
+}
+.iform__test{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
 
 .file__img{
     display: flex;
