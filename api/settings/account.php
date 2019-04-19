@@ -86,6 +86,7 @@ if ($_FILES['file']['size'] > 0) {
                 }
                 $path = "../../assets/userfiles/pfp/".$_SESSION['id'].".webp";
                 move_uploaded_file($_FILES['file']['tmp_name'], $path);
+                imagecrop($path, ['x' => 0, 'y' => 0, 'width' => 100, 'height' => 100]);
             }
         }
     }
