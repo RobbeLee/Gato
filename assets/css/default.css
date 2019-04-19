@@ -414,6 +414,7 @@ nav {
     flex-direction: column;
     overflow: hidden;
     transform: translateX(400px);
+    z-index: 9999;
 }
 
     .user-nav__info {

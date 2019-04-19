@@ -49,17 +49,26 @@ if (file_exists($path)) {
             $posts = $stmt->fetchAll();
 
             foreach ($posts as $post): ?>
-                <div class="post">
-                    <?php if (!is_null($post['uniqueid'])): ?>
-                        <div class="post__img-container">
-                            <img src="../assets/userfiles/imgs/<?=$post['uniqueid']?>.webp" alt="error" class="post__img">
-                        </div>
-                    <?php endif; ?>
+                <div class="post" <?php if (is_null($post['uniqueid'])) echo 'style="height:150px;"'; ?>>
+                        <?php if (!is_null($post['uniqueid'])): ?>
+                            <div class="post__img-container">
+                                <img src="../assets/userfiles/imgs/<?=$post['uniqueid']?>.webp" alt="error" class="post__img">
+                            </div>
+                        <?php endif; ?>
+                    <p class="post__content">
+                        <?=$post['content']?>
+                    </p>
                     <div class="post__body">
-                        <span class="post__content">
-                            <?=$post['content']?>
-                        </span>
-                        <span class="post__date"><?php echo date('F d, Y', strtotime($post['date'])); ?></span>
+                        <div class="post__pfp-container">
+                            <img class="post__pfp" src="<?=$userPfp?>" alt="<?=$result['name']?>" title="<?=$result['name']?>">
+                        </div>
+                        <div class="post__user-container">
+                            <div style="display:flex;flex-direction:column;">
+                                <span class="post__name"><?=$result['name']?></span>
+                                <span class="post__username">@<?=$result['username']?></span>
+                            </div>
+                            <span class="post__date"><?php echo date('F d, Y', strtotime($post['date'])); ?></span>
+                        </div>
                     </div>
                 </div>
             <?php endforeach; ?>
