@@ -10,28 +10,28 @@ $_PAGE = "index";
 <html>
 <head>
     <?php require 'include/meta.php'; ?>
+    <link rel="stylesheet" href="assets/css/index.css">
 </head>
 <body>
     <?php require 'include/nav.php'; ?>
     <?php require 'include/postForm.php'; ?>
-
     <div class="wrapper-form">
         <div class="iForm__container">
             <form enctype="multipart/form-data" method="post"
                 action="<?php if ($subFolder) echo "../"; ?>api/post/makePost.php">
                 <div class="iForm__text">
-                    <div class="iForm__border">
-                        <h1 class="iForm__title"> How about a post? </h1>
+                        <h1 class="iForm__title">WHAT'S HAPPENING</h1>
                     </div>
                     <div class="iForm__content">
                         <input type="text-area" name="msg" class="iForm__content__input"
-                            placeholder="What is on your mind?" id="content">
+                            placeholder="MESSAGE" id="content">
                     </div>
-                    <div class="iForm__button__bottom">
-                        <input type="file" name="file" id="file" class="file__label"/>
-                        <button type="submit" name="submit" class="iForm__btn">Submit</button>
+                    <div class="iForm__button_bottom">
+                    <input type="file" name="file" id="file" style="display:none;" class="post__img-container">
+                        <label for="file" class="post__img-container">Upload Picture</label>
+                        <span id="pfp-input-value" class="post__img-container"></span>
+                        <button type="submit" name="submit" class="iForm__btn">POST</button>
                     </div>
-                </div>
             </form>
         </div> 
     </div>
