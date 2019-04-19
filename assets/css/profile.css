@@ -157,12 +157,20 @@
 .post__name {
     font-size: 18px;
     font-weight: 500;
+    max-width: 130px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .post__username {
     font-size: 16px;
     font-weight: 500;
     color: #888;
+    max-width: 130px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .post__date {
