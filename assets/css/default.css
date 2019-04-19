@@ -485,94 +485,159 @@ nav {
             fill: #6600ee;
         }
 
-#myModal{
-    position: absolute;
+.postmodal {
     position: fixed;
-    display: flex;
-    background: #91909077;
-    height: 100vh;
+    top: 65px;
+    right: 0;
+    bottom: 0;
+    left: 0;
     width: 100vw;
+    height: calc(100vh - 65px);
+    background: rgba(0,0,0,.2);
+    display: flex;
     justify-content: center;
     align-items: center;
     z-index: 8888;
 }
 
-.form{
-    background: #fff;
-    width: 700px;
-    height: 400px;
-    margin: 20px;
-    padding: 0;
-}
+    .postmodal__form {
+        width: 60vw;
+        height: 60vh;
+        background: #fff;
+        box-shadow: 0 3px 8px -8px #000;
+        border-radius: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+    }
 
-.form__text{
-    padding-top: 10px;
-    padding-left: 17px;
-}
+        .postmodal__close {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            font-size: 30px;
+            color: #888;
+            cursor: pointer;
+            transition: color 200ms ease;
+        }
 
-.form__border{
-    border-bottom: #6600ee solid 1px;
-    padding-bottom: 20px;
-    width: 438px;
-}
+        .postmodal__close:hover {
+            color: #ff0000;
+        }
 
-.form__close{
-    float: right;
-    cursor: pointer;
-    font-weight: 900;
-    font-size: 40px;
-    margin-right: 17px;
-}
+        .postmodal__title {
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 40px;
+            position: relative;
+        }
 
-.file__label2{
-    justify-content: center;
-    width: 300px;
-    height: 40px;
-    background: #fafafa;
-    border: 1px dashed rgba(0,0,0,.2);
-    cursor: pointer;
-    transition: border 200ms ease;
-    margin: 0px 20px;
-    margin: auto;
-    font-weight: 700;
-    font-size: 24px;
-}
-.file__label{
-    justify-content: center;
-    width: 300px;
-    height: 40px;
-    background: #fafafa;
-    border: 1px dashed rgba(0,0,0,.2);
-    cursor: pointer;
-    transition: border 200ms ease;
-    margin: 0px 20px;
-    margin: auto;
-}
+        .postmodal__title::after {
+            position: absolute;
+            bottom: 0;
+            width: 80%;
+            height: 2px;
+            background: rgba(0,0,0,.4);
+        }
 
-.form__button__bottom{
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    padding-top: 60px;
-}
+        .postmodal__input-container {
+            width: 90%;
+            max-width: 500px;
+            height: 200px;
+            position: relative;
+            margin-bottom: 20px;
+        }
 
-.form__content__input{
-    width: 580px;
-    height: 160px;
-    padding: 20px;
-    margin-top: 20px;
-    margin-left: 40px;
-    border: none;
-    border-bottom: 1px solid #000;
-    resize: none;
-}
-footer {
-    background: #f0f0f0;
-    width: 100%;
-    padding: 20px 0;
-    text-align: center;
-    margin-top: 120px;
-}
+        .postmodal__textarea {
+            width: 100%;
+            height: 100%;
+            font-size: 18px;
+            border: none;
+            resize: none;
+            border-bottom: 1px solid rgba(0,0,0,.4);
+        }
+
+        .input-underline {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 2px;
+            background: #6600ee;
+            transform: scale(0,1);
+            transition: transform 200ms ease;
+        }
+
+        .postmodal__textarea:focus {
+            outline: none;
+        }
+
+        .postmodal__textarea:focus ~ .input-underline {
+            transform: scale(1);
+        }
+
+        @media screen and (max-width: 650px) {
+            .postmodal__title {
+                font-size: 18px;
+            }
+
+            .postmodal__textarea {
+                font-size: 16px;
+            }
+        }
+
+        .postmodal__footer {
+            width: 80%;
+            max-width: 400px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: row;
+            flex-wrap: nowrap;
+        }
+
+        .postmodal__label {
+            font-size: 18px;
+            font-weight: 500;
+            padding: 10px 20px;
+            background: #fafafa;
+            border: 1px dashed rgba(0,0,0,.2);
+            cursor: pointer;
+        }
+
+        .postmodal__btn {
+            color: #fff;
+            font-size: 18px;
+            font-weight: 500;
+            text-transform: uppercase;
+            padding: 10px 54px;
+            border-radius: 40px;
+            background: #000;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .postmodal__btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 140px;
+            background: #6600ee;
+            z-index: -1;
+            transform: rotate(25deg) translate(-265px, -32px);
+            transition: transform 250ms ease;
+        }
+
+        .postmodal__btn:hover::after {
+            transform: rotate(25deg) translate(-24px, -32px);
+        }
+
 .button { 
 	color: #fff;
 	font-size: 24px;
@@ -601,6 +666,14 @@ footer {
 
 .button:hover::after {
 	transform: rotate(25deg) translate(-24px, -32px);
+}
+
+footer {
+    background: #f0f0f0;
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 120px;
 }
 
 .footer__title{
