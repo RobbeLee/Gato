@@ -41,7 +41,7 @@ $_PAGE = "index";
                     $user = $stmt->fetch();
                     $pfp = "default";
                     if (file_exists("assets/userfiles/pfp/".$user['id'].".webp")) {
-                        $pfp = $user['uniqueid'];
+                        $pfp = $user['id'];
                     }
                 ?>
                 <div class="post" <?php if (is_null($post['uniqueid'])) echo 'style="height:150px;"'; ?>>
