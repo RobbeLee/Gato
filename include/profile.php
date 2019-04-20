@@ -32,8 +32,8 @@ if (file_exists($path)) {
                 <img class="header__pfp container__pfp" src="<?=$userPfp?>" alt="<?=$result['name']?>" title="<?=$result['name']?>">
             </div>
             <div id="header__info">
-                <h2 class="header__username">@<?=$result['username']; ?></h2>
-                <span class="header__name"><?=$result['email']; ?></span>
+                <h1 class="header__name"><?=$result['name']; ?></h1>
+                <span class="header__username">@<?=$result['username']; ?></span>
             </div>
         </div>
         <div id="header__links-container">

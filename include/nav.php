@@ -17,7 +17,7 @@ if (file_exists($path)) {
 ?>
 <nav>
     <div class="nav__left-container">
-        <h1 class="nav__title" title="<?=$_BRAND; ?>"><?=$_BRAND; ?></h1>
+        <a href="<?php if ($subFolder) echo "."; ?>./" class="nav__title" title="<?=$_BRAND; ?>"><?=$_BRAND; ?></a>
         <a href="<?php if ($subFolder) echo "."; ?>./" title="Home" class="nav__link">home</a>
         <a href="<?php if ($subFolder) echo "../"; ?>about" title="About" class="nav__link">about</a>
     </div>

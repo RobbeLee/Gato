@@ -49,10 +49,11 @@ nav {
     }
 
         .nav__title {
+            color: #000;
             font-size: 40px;
             text-transform: uppercase;
             font-weight: 700;
-            cursor: default;
+            cursor: pointer;
             padding: 0 20px 0 0;
             margin-right: 10px;
             position: relative;

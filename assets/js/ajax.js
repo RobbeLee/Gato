@@ -14,7 +14,7 @@ function getPosts(q) {
     xmlhttp.send();
 }
 
-async function getUser(uid) {
+function getUser(uid) {
     uid = parseInt(uid);
     let xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
@@ -33,7 +33,7 @@ async function getUser(uid) {
     getPosts(q);
 })();
 
-async function displayPosts(posts) {
+function displayPosts(posts) {
     let postsContainer = document.querySelector('.posts');
 
     posts.forEach(post => {
@@ -55,7 +55,7 @@ async function displayPosts(posts) {
             date.classList.add('post__date');
             inlineShit.style.display = "flex"; inlineShit.style.flexDirection = "column";
 
-        await getUser(parseInt(post.uid));
+        getUser(parseInt(post.uid));
         console.log(user)
 
         if (post.uniqueid !== null) {
