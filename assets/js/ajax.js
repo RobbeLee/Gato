@@ -28,11 +28,6 @@ function getUser(uid) {
     xmlhttp.send();
 }
 
-(() => {
-    let q = document.querySelector('.nav__input').value;
-    getPosts(q);
-})();
-
 function displayPosts(posts) {
     let postsContainer = document.querySelector('.posts');
 
@@ -56,7 +51,6 @@ function displayPosts(posts) {
             inlineShit.style.display = "flex"; inlineShit.style.flexDirection = "column";
 
         getUser(parseInt(post.uid));
-        console.log(user)
 
         if (post.uniqueid !== null) {
             let userPfpContainer = document.createElement('div'),
@@ -66,3 +60,6 @@ function displayPosts(posts) {
         }
     });
 }
+
+let q = document.querySelector('.nav__input').value;
+getPosts(q);

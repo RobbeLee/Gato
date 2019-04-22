@@ -50,10 +50,16 @@ if (isset($_GET['error'])) {
             <input type="email" name="email" placeholder="Email" class="div__container__info" required>
             <input type="text" name="name" placeholder="Full Name" class="div__container__info" required>
             <input type="text" name="username" placeholder="Username" class="div__container__info" required>
-            <input type="password" name="password" placeholder="Password" class="div__container__info" required> 
-            <form action="http://localhost:8888/GitHub/Gato/">     
-            <button class="button" type="submit" name="submit" >REGISTER</button>
+            <input type="password" name="password" placeholder="Password" class="div__container__info" required>
+            <button class="button" type="submit" name="submit">SIGN UP</button>
         </form>
+        <div id="div__container__registration">
+            <h4>Already have an account?</h4>
+            <a href="./login">Click here</a>
+
+            <h4>Forgot password?</h4>
+            <a href="forgot_password">Click here</a>
+        </div>
    </div>
    <?php require 'include/footer.php'; ?>
 </body>

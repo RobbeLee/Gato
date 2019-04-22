@@ -6,7 +6,7 @@ if (!isset($_GET['uid']) || empty($_GET['uid'])) {
     exit;
 }
 
-$uid = $_GET['uid'];
+$uid = intval($_GET['uid']);
 
 $stmt = $conn->prepare("SELECT * FROM users WHERE id=? LIMIT 1;");
 

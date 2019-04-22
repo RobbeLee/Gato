@@ -29,7 +29,7 @@ $_PAGE = "signup";
             <a href="./signup">Click here</a>
 
             <h4>Forgot password?</h4>
-            <a href="./">Click here</a>
+            <a href="forgot_password">Click here</a>
         </div>
    </div>
    <?php require 'include/footer.php'; ?>

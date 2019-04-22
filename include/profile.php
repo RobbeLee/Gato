@@ -37,9 +37,9 @@ if (file_exists($path)) {
             </div>
         </div>
         <div id="header__links-container">
-            <a href="#" id="header__hover" class="header__link">POST</a>
-            <a href="#liked" id="header__hover" class="header__link">LIKED</a>
-            <a href="#friends" id="header__hover" class="header__link">FRIENDS</a>
+            <a href="#" id="links-posts" class="header__link">POST</a>
+            <a href="#liked" id="links-liked" class="header__link">LIKED</a>
+            <a href="#friends" id="links-friends" class="header__link">FRIENDS</a>
         </div>
     </div>
     <div class="container posts">
@@ -80,5 +80,42 @@ if (file_exists($path)) {
 
     </div>
     <?php require '../include/postForm.php'; ?>
+    <script>
+        let posts = document.querySelector("#links-posts"),
+            liked = document.querySelector("#links-liked"),
+            friends = document.querySelector("#links-friends");
+
+        function checkFragment() {
+            let fragment = window.location.hash.substring(1);
+            switch (fragment) {
+                case '':
+                    posts.classList.add("header__link--active");
+                    liked.classList.remove("header__link--active");
+                    friends.classList.remove("header__link--active");
+                    break;
+                case 'liked':
+                    posts.classList.remove("header__link--active");
+                    liked.classList.add("header__link--active");
+                    friends.classList.remove("header__link--active");
+                    break;
+                case 'friends':
+                    posts.classList.remove("header__link--active");
+                    liked.classList.remove("header__link--active");
+                    friends.classList.add("header__link--active");
+                    break;
+                default:
+                    posts.classList.add("header__link--active");
+                    liked.classList.remove("header__link--active");
+                    friends.classList.remove("header__link--active");
+                    break;
+            }
+        }
+
+        window.addEventListener('hashchange', () => {
+            checkFragment();
+        });
+
+        checkFragment();
+    </script>
 </body>
 </html>
