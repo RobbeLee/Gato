@@ -33,7 +33,7 @@
             text-transform: uppercase;
             font-weight: 500;
             padding-left: 60px;
-            background: #fafafa;
+            background: #f3f3f3;
             border-radius: 0 40px 40px 0;
             display: flex;
             align-items: center;
@@ -60,7 +60,7 @@
         }
 
         .settings-nav__link:hover {
-            background: #f0f0f0;
+            background: #eaeaea;
         }
 
     .settings-container {
@@ -90,20 +90,31 @@
             background: rgba(0,0,0,.2);
         }
 
-        .settings__input-container {
+        .settings__input-container, .settings__input-container--large {
             width: 200px;
             height: 35px;
             position: relative;
             margin: 0 0 40px 0;
         }
 
-            .settings__input {
+        .settings__input-container--large {
+            width: 400px;
+            height: 200px;
+        }
+
+            .settings__input, .settings__textarea {
                 width: 100%;
                 height: 100%;
                 font-size: 18px;
                 border: none;
                 border-bottom: 1px solid rgba(0,0,0,.2);
                 padding: 10px;
+            }
+
+            .settings__textarea {
+                font-size: 16px;
+                resize: none;
+                background: transparent;
             }
 
                 .input__label {
@@ -130,11 +141,11 @@
                     transition: transform 200ms ease;
                 }
 
-                .settings__input:focus {
+                .settings__input:focus, .settings__textarea:focus {
                     outline: none;
                 }
 
-                .settings__input:focus ~ .input__underline {
+                .settings__input:focus ~ .input__underline, .settings__textarea:focus ~ .input__underline {
                     transform: scale(1);
                 }
 

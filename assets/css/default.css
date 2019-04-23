@@ -17,20 +17,21 @@ a {
 button, input[type="button"] {
     border: none;
     cursor: pointer;
+    box-shadow: none;
 }
 
 html, body {
     width: 100%;
-    background: #fff;
+    background: #fafafa;
 }
 
 nav {
     position: fixed;
     width: 100%;
     height: 65px;
-    background: rgba(255,255,255,0.99);
-    box-shadow: 0 3px 10px -8px #000;
-    -webkit-box-shadow: 0 3px 10px -8px #000;
+    background: rgba(255,255,255,0.97);
+    box-shadow: 0 3px 8px -9px #000;
+    -webkit-box-shadow: 0 3px 8px -9px #000;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -480,7 +481,11 @@ nav {
         }
 
         .user-nav__link:hover {
-            background: #fafafa;
+            background: rgba(0,0,0,.1);
+        }
+
+        .user-nav__link:focus {
+            background: rgba(0,0,0,.2);
         }
 
         .user-nav__link--active svg, .user-nav__link--active path {
@@ -706,7 +711,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 5px 0 0 5px;
+    margin: 10px 0 0 10px;
 }
 
 .post__pfp {
@@ -720,8 +725,8 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 5px;
-    margin-top: 5px;
+    padding: 0 10px;
+    margin-top: 10px;
 }
 
 .post__name {
@@ -756,7 +761,7 @@ nav {
 .post__content {
     font-size: 16px;
     height: 100%;
-    padding: 0 5px 5px;
+    padding: 0 10px 10px;
     word-wrap: break-word;
 }
 
@@ -769,7 +774,7 @@ nav {
     justify-content: center;
     align-items: center;
     border-radius: 0 0 12px 12px;
-    background: #f0f0f0;
+    background: #f3f3f3;
 }
 
 .post__img {
@@ -781,7 +786,7 @@ nav {
 }
 
 footer {
-    background: #f0f0f0;
+    background: #f3f3f3;
     width: 100%;
     padding: 20px 0;
     text-align: center;

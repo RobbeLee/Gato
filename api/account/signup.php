@@ -25,7 +25,7 @@ if (empty($_POST['email']) || empty($_POST['name']) || empty($_POST['username'])
 }
 
 $name = $_POST['name'];
-$username = $_POST['username'];
+$username = str_replace(' ', '_', $_POST['username']);
 $email = strtolower($_POST['email']);
 $password = $_POST['password'];
 $created = date('Y-m-d H:i:s');
@@ -34,7 +34,7 @@ $password = password_hash($password, PASSWORD_DEFAULT);
 
 //if (!preg_match("/^[a-zA-Z0-9]*$/", $name) || !preg_match("/^[a-zA-Z0-9]*$/", $username) || !preg_match("/^[a-zA-Z0-9]*$/", $password)) header("Location: ../../signup?error=1");
 
-if (strlen($name) > 60 || strlen($username) > 60 || strlen($password) > 60) {
+if (strlen($name) > 60 || strlen($username) > 60 || strlen($_POST['password']) > 60) {
     header("Location: ../../signup?error=2");
     exit;
 }

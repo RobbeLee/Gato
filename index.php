@@ -15,10 +15,10 @@ $_PAGE = "index";
     <?php require 'include/nav.php'; ?>
     <?php require 'include/postForm.php'; ?>
     <?php if (isset($_SESSION['id'])): ?>
-    <form action="api/post/makePost.php" enctype="multipart/form-data" method="post" class="postmodal__form" style="margin:0 auto;">
+    <form action="api/post/makePost.php" enctype="multipart/form-data" method="post" class="postmodal__form postform" style="margin:0 auto;">
         <span class="postmodal__title">Make new post</span>
         <div class="postmodal__input-container">
-            <textarea class="postmodal__textarea" name="msg" placeholder="Message..."></textarea>
+            <textarea class="postmodal__textarea" name="msg" style="background:transparent;" placeholder="Message..."></textarea>
             <div class="input-underline"></div>
         </div>
         <div class="postmodal__footer">
@@ -52,13 +52,13 @@ $_PAGE = "index";
                         <?=htmlspecialchars($post['content'])?>
                     </p>
                     <div class="post__body">
-                        <a href="u/<?=htmlspecialchars($user['username'])?>" class="post__pfp-container">
+                        <a href="u/<?=strtolower(htmlspecialchars($user['username']))?>" class="post__pfp-container">
                             <img class="post__pfp" src="assets/userfiles/pfp/<?=htmlspecialchars($pfp)?>.webp" alt="<?=htmlspecialchars($user['name'])?>" title="<?=htmlspecialchars($user['name'])?>">
                         </a>
                         <div class="post__user-container">
                             <div style="display:flex;flex-direction:column;">
-                                <span class="post__name"><a href="u/<?=htmlspecialchars($user['username'])?>"><?=htmlspecialchars($user['name'])?></a></span>
-                                <span class="post__username"><a href="u/<?=htmlspecialchars($user['username'])?>">@<?=htmlspecialchars($user['username'])?></a></span>
+                                <span class="post__name"><a href="u/<?=strtolower(htmlspecialchars($user['username']))?>"><?=htmlspecialchars($user['name'])?></a></span>
+                                <span class="post__username"><a href="u/<?=strtolower(htmlspecialchars($user['username']))?>">@<?=htmlspecialchars($user['username'])?></a></span>
                             </div>
                             <span class="post__date"><?php echo htmlspecialchars(date('F d, Y', strtotime($post['date']))); ?></span>
                         </div>

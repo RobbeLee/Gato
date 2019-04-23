@@ -30,6 +30,6 @@
     postspan.addEventListener('click', ()=>{
         postmodalOpen ? postmodal.style.display = "none" : postmodal.style.display = "flex";
         postmodalOpen ? postmodalOpen = false : postmodalOpen = true;
-    })
+    });
 </script>
 <?php endif; ?>

@@ -27,7 +27,7 @@ if (!empty($_POST['username'])) {
     if (strlen($_POST['username']) > 60) {
         array_push($errors, 'Your username cannot be longer than 60 characters.');
     } else {
-        $username = $_POST['username'];
+        $username = str_replace(' ', '_', $_POST['username']);;
         $stmt = $conn->prepare("SELECT * FROM users WHERE username=? LIMIT 1");
         if (!$stmt->execute([$username])) {
             echo "Error";
@@ -43,6 +43,16 @@ if (!empty($_POST['username'])) {
         array_push($values, $username);
         array_push($updates, 'username=?');
         rename("../../u/".strtolower($_SESSION['username']).".php", "../../u/".strtolower($username).".php");
+    }
+}
+
+if (!empty($_POST['bio'])) {
+    if (strlen($_POST['bio']) > 240) {
+        array_push($errors, 'Your bio cannot be longer than 240 characters.');
+    } else {
+        $bio = $_POST['bio'];
+        array_push($values, $bio);
+        array_push($updates, 'bio=?');
     }
 }
 

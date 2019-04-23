@@ -26,18 +26,19 @@ if (file_exists($path)) {
 </head>
 <body>
     <?php require '../include/nav.php'; ?>
-    <div class="header" id="container"> 
+    <div class="header"> 
         <div class="header__body">
             <div class="header__pfp-container" id="container__pfp">
-                <img class="header__pfp container__pfp" src="<?=$userPfp?>" alt="<?=$result['name']?>" title="<?=$result['name']?>">
+                <img class="header__pfp container__pfp" src="<?=$userPfp?>" alt="<?=htmlspecialchars($result['name'])?>" title="<?=htmlspecialchars($result['name'])?>">
             </div>
-            <div id="header__info">
-                <h1 class="header__name"><?=$result['name']; ?></h1>
-                <span class="header__username">@<?=$result['username']; ?></span>
+            <div class="header__info">
+                <h1 class="header__name"><?=htmlspecialchars($result['name'])?></h1>
+                <span class="header__username">@<?=htmlspecialchars($result['username'])?></span>
+                <p class="header__bio"><?=htmlspecialchars($result['bio'])?></p>
             </div>
         </div>
-        <div id="header__links-container">
-            <a href="#" id="links-posts" class="header__link">POST</a>
+        <div class="header__links-container">
+            <a href="#posts" id="links-posts" class="header__link">POST</a>
             <a href="#liked" id="links-liked" class="header__link">LIKED</a>
             <a href="#friends" id="links-friends" class="header__link">FRIENDS</a>
         </div>
@@ -88,25 +89,33 @@ if (file_exists($path)) {
         function checkFragment() {
             let fragment = window.location.hash.substring(1);
             switch (fragment) {
-                case '':
+                case 'posts':
                     posts.classList.add("header__link--active");
                     liked.classList.remove("header__link--active");
                     friends.classList.remove("header__link--active");
+                    document.querySelector(".user-nav__profile-friends").classList.remove("user-nav__link--active");
+                    document.querySelector(".user-nav__profile-liked").classList.remove("user-nav__link--active");
                     break;
                 case 'liked':
                     posts.classList.remove("header__link--active");
                     liked.classList.add("header__link--active");
                     friends.classList.remove("header__link--active");
+                    document.querySelector(".user-nav__profile-liked").classList.add("user-nav__link--active");
+                    document.querySelector(".user-nav__profile-friends").classList.remove("user-nav__link--active");
                     break;
                 case 'friends':
                     posts.classList.remove("header__link--active");
                     liked.classList.remove("header__link--active");
                     friends.classList.add("header__link--active");
+                    document.querySelector(".user-nav__profile-friends").classList.add("user-nav__link--active");
+                    document.querySelector(".user-nav__profile-liked").classList.remove("user-nav__link--active");
                     break;
                 default:
                     posts.classList.add("header__link--active");
                     liked.classList.remove("header__link--active");
                     friends.classList.remove("header__link--active");
+                    document.querySelector(".user-nav__profile-friends").classList.remove("user-nav__link--active");
+                    document.querySelector(".user-nav__profile-liked").classList.remove("user-nav__link--active");
                     break;
             }
         }

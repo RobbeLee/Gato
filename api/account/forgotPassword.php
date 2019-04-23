@@ -2,7 +2,33 @@
 require '../../include/db.php';
 require '../../include/php_header.php';
 
-if (!isset($_POST['email']) || empty($_POST['email'])) {
+if (isset($_GET['token'])) {
+    $token = $_GET['token'];
+    $stmt = $conn->prepare("SELECT * FROM tokens WHERE token=? LIMIT 1;");
+    if (!$stmt->execute([$token])) {
+        echo "FATAL ERROR";
+        exit;
+    }
+    if ($stmt->rowCount() == 0) {
+        header("Location: ../../forgot_password?error=4");
+        exit;
+    }
+    $result = $stmt->fetch();
+    if ($result['date'] < date("Y-m-d H:m:i")) {
+        $stmt = $conn->prepare("DELETE FROM tokens WHERE id=?;");
+        if (!$stmt->execute([$result['id']])) {
+            echo "FATAL ERROR";
+            exit;
+        }
+        header("Location: ../../forgot_password?error=5");
+        exit;
+    }
+    $_SESSION['token'] = $token;
+    header("Location: ../../forgot_password");
+    exit;
+}
+
+if (!isset($_POST['submit']) || !isset($_POST['email']) || empty($_POST['email'])) {
     header("Location: ../../");
     exit;
 }
@@ -31,24 +57,49 @@ if (!$stmt->execute([$email])) {
     exit;
 }
 
-$result = $stmt->fetch();
+$user = $stmt->fetch();
 
-if ($result['email'] !== $email) {
+if ($stmt->rowCount() == 0 || $user['email'] !== $email) {
     header("Location: ../../forgot_password?error=2");
     exit;
 }
 
-if ($result['id'] !== $_SESSION['id']) {
-    header("Location: ../../forgot_password?error=3");
+$stmt = $conn->prepare("SELECT * FROM tokens WHERE uid=? LIMIT 1;");
+
+if (!$stmt->execute([$user['id']])) {
+    echo "FATAL ERROR";
     exit;
 }
 
+$result = $stmt->fetch();
+
+if ($stmt->rowCount() > 0) {
+    $date = $result['date'];
+    if ($date > date("Y-m-d H:m:i")) {
+        header("Location: ../../forgot_password?error=3");
+        exit;
+    } else {
+        $stmt = $conn->prepare("DELETE FROM tokens WHERE id=?;");
+        if (!$stmt->execute([$result['id']])) {
+            echo "FATAL ERROR";
+            exit;
+        }
+    }
+}
+
 $token = generateRandomString(80);
-$date = date("Y-m-d H:m:i");
-var_dump($date);
+$date = date("Y-m-d H:m:i", strtotime('+1 hour'));
 
 $stmt = $conn->prepare("INSERT INTO tokens (uid, token, date) VALUES (?, ?, ?)");
 
-$message = 'Click the link below to change your password.\n<a href="25933.hosts2.ma-cloud.nl/gato/forgot_password" target="_about"></a>';
+if (!$stmt->execute([$user['id'], $token, $date])) {
+    echo "FATAL ERROR";
+    exit;
+}
+
+$message = 'Click the link below to change your password.\n<a href="25933.hosts2.ma-cloud.nl/gato/forgot_password?token='.$token.'" target="_about"></a>';
 
 mail($email, "Forgot Password", $message, 'From: noreply@gato.com');
+
+header("Location: ../../forgot_password?success");
+exit;
