@@ -8,8 +8,8 @@
             <div class="input-underline"></div>
         </div>
         <div class="postmodal__footer">
-            <input type="file" name="file" id="file" style="display:none;">
-            <label for="file" class="postmodal__label">Upload Picture</label>
+            <input type="file" name="file" id="modalfile" style="display:none;">
+            <label for="modalfile" class="postmodal__label">Upload Picture</label>
             <button type="submit" name="submit" class="postmodal__btn" id="postmodal__btn">post</button>
         </div>
     </form>

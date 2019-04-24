@@ -20,6 +20,10 @@ button, input[type="button"] {
     box-shadow: none;
 }
 
+input, textarea {
+    background: transparent;
+}
+
 html, body {
     width: 100%;
     background: #fafafa;
@@ -512,9 +516,9 @@ nav {
         height: 90vh;
         max-width: 600px;
         max-height: 500px;
-        background: #fff;
-        box-shadow: 0 3px 8px -8px #000;
-        border-radius: 30px;
+        background: #fafafa;
+        box-shadow: 0 3px 20px -10px #000;
+        border-radius: 12px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -612,7 +616,7 @@ nav {
             font-size: 18px;
             font-weight: 500;
             padding: 10px 20px;
-            background: #fafafa;
+            background: #fff;
             border: 1px dashed rgba(0,0,0,.2);
             cursor: pointer;
             transition: border 200ms ease;
@@ -683,7 +687,8 @@ nav {
 }
 
 .post {
-    width: 400px;
+    max-width: 400px;
+    width: 90vw;
     height: 300px;
     background: #fff;
     border-radius: 12px;
