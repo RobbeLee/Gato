@@ -789,7 +789,11 @@ nav {
     width: auto;
     height: auto;
 }
-
+@media screen and (max-width: 950px){
+    .post {
+        margin-right: 0;
+    }
+}
 footer {
     background: #f3f3f3;
     width: 100%;
