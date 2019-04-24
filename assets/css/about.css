@@ -19,7 +19,8 @@
 }
 .section__title{
     font-size: 24px;
-    width: 500px;
+    max-width: 500px;
+    width: 90vw;
     position: relative;
     padding-bottom: 20px;
     margin-bottom: 20px;
@@ -34,14 +35,16 @@
     background: #6600ee;
 }
 .section__p{
-    width: 500px;
+    max-width: 500px;
+    width: 90vw;
 }
 .about{
     margin-bottom: 80px;
 }
 .about__title{
     margin-bottom: 5px; 
-    width: 500px;
+    max-width: 500px;
+    width: 90vw;
     position: relative;
     padding-bottom: 20px;
     margin-bottom: 20px;
@@ -64,9 +67,10 @@
 .names{
     margin-top: 40px;
     display: flex;
+    justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 960px;
+    width: 95vw;
 }
 .card{
     background-color: #fafafa;
@@ -141,5 +145,3 @@
 .achieve{
     margin-bottom: 80px;
 }
-
- 
