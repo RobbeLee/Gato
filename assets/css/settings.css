@@ -1,7 +1,8 @@
 @import 'default.css';
 
 .container {
-    width: 1000px;
+    max-width: 1200px;
+    width: 90vw;
     min-height: 80vh;
     margin: 0 auto;
     padding-top: 100px;
@@ -9,13 +10,10 @@
     justify-content: center;
     align-items: flex-start;
     flex-direction: row;
-    flex-wrap: nowrap;
-    position: relative;
+    flex-wrap: wrap;
 }
 
     .settings-nav {
-        position: absolute;
-        left: 0;
         width: 250px;
         overflow: hidden;
         display: flex;
@@ -64,7 +62,8 @@
         }
 
     .settings-container {
-        width: 200px;
+        max-width: 400px;
+        width: 90vw;
         display: none;
         justify-content: flex-start;
         align-items: flex-start;
@@ -212,3 +211,41 @@
             .settings__btn:hover::after {
                 transform: rotate(25deg) translate(-45px, -32px);
             }
+
+@media screen and (max-width: 855px) {
+    .settings-nav {
+        width: 90vw;
+        justify-content: center;
+        align-items: flex-end;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        margin: 0 0 20px 0;
+        border: none;
+        border-bottom: 5px solid #f3f3f3;
+    }
+    
+    .settings-nav__link {
+        margin: 0 5px;
+        border-radius: 12px 12px 0 0;
+        padding: 0;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .settings-nav__link::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: calc(50% - 40%);
+        height: 4px;
+        width: 80%;
+        border-radius: 12px 12px 0 0;
+        background: #6600ee;
+        transform: translateY(5px);
+        transition: transform 200ms ease;
+    }
+
+    .settings-nav__link--active::before {
+        transform: translateY(0);
+    }
+}
