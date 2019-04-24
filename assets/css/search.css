@@ -12,7 +12,8 @@
 }
 
 .header {
-    width: 800px;
+    max-width: 800px;
+    width: 100%;
     border-bottom: 1px solid rgba(0,0,0,.2);
     margin-bottom: 40px;
 }
@@ -37,10 +38,11 @@
 }
 
 .results {
-    width: 100%;
+    max-width: 1680px;
+    width: 90vw;
     display: flex;
     justify-content: center;
     align-items: flex-start;
     flex-direction: row;
-    flex-wrap: wrap;    
+    flex-wrap: wrap;
 }

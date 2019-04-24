@@ -30,7 +30,7 @@ if (file_exists($path)) {
     </form>
     <?php if (isset($_SESSION['id'])): ?>
         <button class="nav__btn" id="new_post" title="New Post"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M21.99 4c0-1.1-.89-2-1.99-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4-.01-18zM17 11h-4v4h-2v-4H7V9h4V5h2v4h4v2z"/></svg></button>
-        <button class="nav__btn" title="Notifications"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg></button>
+        <button class="nav__btn" id="notifications-toggle" title="Notifications"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg></button>
         <button class="nav__pfp-container" id="pfp-toggle" title="<?=htmlspecialchars($_SESSION['name']);?>">
             <img src="<?=htmlspecialchars($pfp)?>" alt="error" class="nav__pfp">
         </button>
@@ -70,8 +70,24 @@ if (file_exists($path)) {
     </div>
 </nav>
 
-
 <?php if (isset($_SESSION['id'])): ?>
+<div class="notifications">
+<?php
+$stmt = $conn->prepare("SELECT * FROM friends WHERE friendid=?;");
+$stmt->execute([$_SESSION['id']]);
+$notifications = $stmt->fetchAll();
+if ($stmt->rowCount() == 0) echo "No new notifications.";
+foreach ($notifications as $notification):
+    $stmt = $conn->prepare("SELECT username FROM users WHERE id=?;");
+    $stmt->execute([$notification['uid']]);
+    $newFriend = $stmt->fetch();
+?>
+    <a href="<?php if ($subFolder) echo "../"; ?>u/<?=strtolower(htmlspecialchars($newFriend['username']))?>" class="notification">
+        <span class="notification__username">@<?=htmlspecialchars($newFriend['username'])?></span> has befriended you
+    </a>
+<?php endforeach; ?>
+</div>
+
 <div class="user-nav" id="user-nav">
     <div class="user-nav__info">
         <h2 class="user-nav__username" title="@<?=htmlspecialchars($_SESSION['username']); ?>">@<?=htmlspecialchars($_SESSION['username']); ?></h2>
@@ -87,14 +103,16 @@ if (file_exists($path)) {
 </div>
 <script>
     let open = false;
+    document.querySelector('#notifications-toggle').addEventListener('click', () => {
+        userNavOpen ? document.querySelector('.notifications').style.transform = "translateX(550px)" : document.querySelector('.notifications').style.transform = "translateX(0)";
+        userNavOpen ? userNavOpen = false : userNavOpen = true;
+    });
+</script>
+<script>
+    let userNavOpen = false;
     document.querySelector('#pfp-toggle').addEventListener('click', () => {
-        if (open) {
-            open = false;
-            document.querySelector('#user-nav').style.transform = "translateX(400px)";
-        } else {
-            open = true;
-            document.querySelector('#user-nav').style.transform = "translateX(0)";
-        }
-    })
+        userNavOpen ? document.querySelector('#user-nav').style.transform = "translateX(400px)" : document.querySelector('#user-nav').style.transform = "translateX(0)";
+        userNavOpen ? userNavOpen = false : userNavOpen = true;
+    });
 </script>
 <?php endif; ?>

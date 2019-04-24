@@ -4,7 +4,7 @@
         <span class="postmodal__close" id="postmodal__close">X</span>
         <h2 class="postmodal__title">What do you want to post today?</h2>
         <div class="postmodal__input-container">
-            <textarea class="postmodal__textarea" name="msg" placeholder="Message..."></textarea>
+            <textarea class="postmodal__textarea" id="postmodal__msg" name="msg" placeholder="Message..."></textarea>
             <div class="input-underline"></div>
         </div>
         <div class="postmodal__footer">
@@ -25,10 +25,12 @@
 
     makepostbtn.addEventListener('click', () => {
         postmodalOpen ? postmodal.style.display = "none" : postmodal.style.display = "flex";
+        postmodalOpen ? document.querySelector('#postmodal__msg').blur() : document.querySelector('#postmodal__msg').focus();
         postmodalOpen ? postmodalOpen = false : postmodalOpen = true;
     });
     postspan.addEventListener('click', ()=>{
         postmodalOpen ? postmodal.style.display = "none" : postmodal.style.display = "flex";
+        postmodalOpen ? document.querySelector('#postmodal__msg').blur() : document.querySelector('#postmodal__msg').focus();
         postmodalOpen ? postmodalOpen = false : postmodalOpen = true;
     });
 </script>

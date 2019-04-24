@@ -37,20 +37,13 @@ if (isset($_GET['type']) && !empty($_GET['type'])) {
 
 $sql = $sql."WHERE ";
 
-if (isset($_GET['filter']) && !empty($_GET['filter'])) {
-    $key = intval($_GET['filter']);
-    switch ($key) {
-        case 1:
-            $sql = $sql."content LIKE concat('%', ?, '%') ";
-            break;
-        case 2:
-            $sql = $sql."username LIKE concat('%', ?, '%') ";
-    }
-} else {
+if ($orderBy) {
     $sql = $sql."content LIKE concat('%', ?, '%') ";
+} else {
+    $sql = $sql."username LIKE concat('%', ?, '%') ";
 }
 
-$sql = $sql."ORDER BY date DESC LIMIT 15";
+$sql = $sql."ORDER BY id DESC LIMIT 15";
 
 $stmt = $conn->prepare($sql);
 
@@ -86,8 +79,12 @@ $result = $stmt->fetchAll();
                     $user = $stmt->fetch();
                     $pfp = "default";
                     if (file_exists("assets/userfiles/pfp/".$user['id'].".webp")) $pfp = $user['id'];
+                    $stmt = $conn->prepare("SELECT * FROM liked WHERE uid=? AND postid=?;");
+                    $stmt->execute([$_SESSION['id'], $post['id']]);
+                    $liked = false;
+                    if ($stmt->rowCount() == 1) $liked = true;
                 ?>
-                <div class="post" <?php if (is_null($post['uniqueid'])) echo 'style="height:150px;"'; ?>>
+                <div class="post" <?php if (is_null($post['uniqueid'])) echo 'style="height:230px;"'; ?>>
                         <?php if (!is_null($post['uniqueid'])): ?>
                             <div class="post__img-container">
                                 <img src="assets/userfiles/imgs/<?=htmlspecialchars($post['uniqueid'])?>.webp" alt="error" class="post__img">
@@ -97,17 +94,18 @@ $result = $stmt->fetchAll();
                         <?=htmlspecialchars($post['content'])?>
                     </p>
                     <div class="post__body">
-                        <a href="u/<?=htmlspecialchars($user['username'])?>" class="post__pfp-container">
+                        <a href="u/<?=strtolower(htmlspecialchars($user['username']))?>" class="post__pfp-container">
                             <img class="post__pfp" src="assets/userfiles/pfp/<?=htmlspecialchars($pfp)?>.webp" alt="<?=htmlspecialchars($user['name'])?>" title="<?=htmlspecialchars($user['name'])?>">
                         </a>
                         <div class="post__user-container">
                             <div style="display:flex;flex-direction:column;">
-                                <span class="post__name"><a href="u/<?=htmlspecialchars($user['username'])?>"><?=htmlspecialchars($user['name'])?></a></span>
-                                <span class="post__username"><a href="u/<?=htmlspecialchars($user['username'])?>">@<?=htmlspecialchars($user['username'])?></a></span>
+                                <span class="post__name"><a href="u/<?=strtolower(htmlspecialchars($user['username']))?>"><?=htmlspecialchars($user['name'])?></a></span>
+                                <span class="post__username"><a href="u/<?=strtolower(htmlspecialchars($user['username']))?>">@<?=htmlspecialchars($user['username'])?></a></span>
                             </div>
                             <span class="post__date"><?php echo htmlspecialchars(date('F d, Y', strtotime($post['date']))); ?></span>
                         </div>
                     </div>
+                    <button class="post__like-btn <?php if ($liked) echo 'post__like-btn--liked'; ?>" data-id="<?=$post['id']?>"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
                 </div>
             <?php endforeach;
             else:
