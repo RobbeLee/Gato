@@ -66,16 +66,16 @@ if (isset($_SESSION['id'])) {
                 }
             ?>
                 <div class="post" <?php if (is_null($post['uniqueid'])) echo 'style="height:230px;"'; ?>>
+                    <div class="post__img-container" <?php if (is_null($post['uniqueid'])) echo 'style="height:0px;"' ?>>
                         <?php if (!is_null($post['uniqueid'])): ?>
-                            <div class="post__img-container">
-                                <img src="../assets/userfiles/imgs/<?=htmlspecialchars($post['uniqueid'])?>.webp" alt="error" class="post__img">
-                            </div>
+                        <img src="../assets/userfiles/imgs/<?=htmlspecialchars($post['uniqueid'])?>.webp" alt="error" class="post__img">
                         <?php endif; ?>
+                    </div>
                     <p class="post__content">
                         <?=htmlspecialchars($post['content'])?>
                     </p>
                     <div class="post__body">
-                        <a href="../u/<?=strtolower(htmlspecialchars($result['username']))?>" class="post__pfp-container">
+                        <a href="u/<?=strtolower(htmlspecialchars($user['username']))?>" class="post__pfp-container">
                             <img class="post__pfp" src="<?=htmlspecialchars($userPfp)?>" alt="<?=htmlspecialchars($result['name'])?>" title="<?=htmlspecialchars($result['name'])?>">
                         </a>
                         <div class="post__user-container">
@@ -86,7 +86,7 @@ if (isset($_SESSION['id'])) {
                             <span class="post__date"><?php echo htmlspecialchars(date('F d, Y', strtotime($post['date']))); ?></span>
                         </div>
                     </div>
-                    <button class="post__like-btn <?php if ($liked) echo 'post__like-btn--liked'; ?>" data-id="<?=$post['id']?>"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+                    <button class="post__like-btn <?php if ($liked) echo 'post__like-btn--liked'; ?>" data-liked="<?php if ($liked) { echo "1"; } else { echo "0"; }?>" data-id="<?=$post['id']?>"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
                 </div>
             <?php endforeach; ?>
     </div>
@@ -115,16 +115,16 @@ if (isset($_SESSION['id'])) {
             }
             ?>
             <div class="post" <?php if (is_null($post['uniqueid'])) echo 'style="height:230px;"'; ?>>
+                <div class="post__img-container" <?php if (is_null($post['uniqueid'])) echo 'style="height:0px;"' ?>>
                     <?php if (!is_null($post['uniqueid'])): ?>
-                        <div class="post__img-container">
-                            <img src="../assets/userfiles/imgs/<?=htmlspecialchars($post['uniqueid'])?>.webp" alt="error" class="post__img">
-                        </div>
+                    <img src="../assets/userfiles/imgs/<?=htmlspecialchars($post['uniqueid'])?>.webp" alt="error" class="post__img">
                     <?php endif; ?>
+                </div>
                 <p class="post__content">
                     <?=htmlspecialchars($post['content'])?>
                 </p>
                 <div class="post__body">
-                    <a href="../u/<?=strtolower(htmlspecialchars($user['username']))?>" class="post__pfp-container">
+                    <a href="u/<?=strtolower(htmlspecialchars($user['username']))?>" class="post__pfp-container">
                         <img class="post__pfp" src="../assets/userfiles/pfp/<?=htmlspecialchars($userPfp)?>.webp" alt="<?=htmlspecialchars($user['name'])?>" title="<?=htmlspecialchars($user['name'])?>">
                     </a>
                     <div class="post__user-container">
@@ -135,7 +135,7 @@ if (isset($_SESSION['id'])) {
                         <span class="post__date"><?php echo htmlspecialchars(date('F d, Y', strtotime($post['date']))); ?></span>
                     </div>
                 </div>
-                <button class="post__like-btn <?php if ($liked) echo 'post__like-btn--liked'; ?>" data-id="<?=$post['id']?>"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+                <button class="post__like-btn <?php if ($liked) echo 'post__like-btn--liked'; ?>" data-liked="<?php if ($liked) { echo "1"; } else { echo "0"; }?>" data-id="<?=$post['id']?>"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
             </div>
         <?php endforeach; ?>
     </div>
@@ -232,6 +232,7 @@ if (isset($_SESSION['id'])) {
 
         checkFragment();
     </script>
+    <?php require '../include/postModal.php'; ?>
     <?php if (isset($_SESSION['id'])): ?>
     <script src="../assets/js/like.js"></script>
     <script src="../assets/js/friend.js"></script>

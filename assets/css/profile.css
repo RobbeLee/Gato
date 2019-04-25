@@ -186,6 +186,11 @@
     flex-direction: row;
     flex-wrap: nowrap;
     margin: 0 20px 20px 0;
+    transition: box-shadow 200ms ease;
+}
+
+.friend:hover {
+    box-shadow: 0 0 8px -4px #000;
 }
 
     .friend__pfp-container {

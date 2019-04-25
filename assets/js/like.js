@@ -20,7 +20,7 @@ function likePost(postID, btn) {
             }
         }
     };
-    let url = "/gato/api/post/like.php?postID="+postID;
+    let url = "/api/post/like.php?postID="+postID;
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
 }

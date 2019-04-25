@@ -18,7 +18,7 @@ function friendUser(friendID) {
             }
         }
     };
-    let url = "/gato/api/account/friend.php?friendID="+friendID;
+    let url = "/api/account/friend.php?friendID="+friendID;
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
 }
