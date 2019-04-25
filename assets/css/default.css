@@ -1041,6 +1041,21 @@ nav {
     fill: #6600ee;
 }
 
+@media screen and (max-width: 703px){
+    .view-post__body{
+        background: rgba(255, 255, 255, 0);
+        width: 0px;
+        min-width: 100px;
+        display: flex;
+        flex-direction: wrap;
+    }
+    .view-post__username {
+        font-size: 12px;
+    }
+    .view-post__name {
+        font-size: 12px;
+    }
+}
 footer {
     background: #f3f3f3;
     width: 100%;
