@@ -97,7 +97,8 @@
         }
 
         .settings__input-container--large {
-            width: 400px;
+            max-width: 400px;
+            width: 90vw;
             height: 200px;
         }
 

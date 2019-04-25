@@ -59,7 +59,7 @@ if (!$stmt->execute([$email])) {
 
 $user = $stmt->fetch();
 
-if ($stmt->rowCount() == 0 || $user['email'] !== $email) {
+if ($stmt->rowCount() == 0) {
     header("Location: ../../forgot_password?error=2");
     exit;
 }
