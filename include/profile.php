@@ -75,7 +75,7 @@ if (isset($_SESSION['id'])) {
                         <?=htmlspecialchars($post['content'])?>
                     </p>
                     <div class="post__body">
-                        <a href="u/<?=strtolower(htmlspecialchars($user['username']))?>" class="post__pfp-container">
+                        <a href="../u/<?=strtolower(htmlspecialchars($user['username']))?>" class="post__pfp-container">
                             <img class="post__pfp" src="<?=htmlspecialchars($userPfp)?>" alt="<?=htmlspecialchars($result['name'])?>" title="<?=htmlspecialchars($result['name'])?>">
                         </a>
                         <div class="post__user-container">
@@ -124,7 +124,7 @@ if (isset($_SESSION['id'])) {
                     <?=htmlspecialchars($post['content'])?>
                 </p>
                 <div class="post__body">
-                    <a href="u/<?=strtolower(htmlspecialchars($user['username']))?>" class="post__pfp-container">
+                    <a href="../u/<?=strtolower(htmlspecialchars($user['username']))?>" class="post__pfp-container">
                         <img class="post__pfp" src="../assets/userfiles/pfp/<?=htmlspecialchars($userPfp)?>.webp" alt="<?=htmlspecialchars($user['name'])?>" title="<?=htmlspecialchars($user['name'])?>">
                     </a>
                     <div class="post__user-container">
