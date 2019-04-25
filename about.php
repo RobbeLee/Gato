@@ -5,6 +5,7 @@
 --->
 
 <?php
+    require 'include/db.php';
     require 'include/php_header.php';
     $subFolder = false;
     $_TITLE = "About | ".$_BRAND;

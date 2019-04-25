@@ -6,7 +6,7 @@ function getPosts(amount) {
             document.querySelector('#expand') = this.responseText;
         }
     };
-    let url = "api/post/displayPosts.php?amount="+parseInt(amount);
+    let url = "/gato/api/post/displayPosts.php?amount="+parseInt(amount);
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
 }
