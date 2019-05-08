@@ -12,6 +12,6 @@ If you want to see what we are working on, head over to the projects piece of ou
 http://25933.hosts2.ma-cloud.nl/gato/
 
 # Devs
-Mike: https://github.com/MikeS25933
-Matthijs: https://github.com/263782
+Mike: https://github.com/MikeS25933 <br>
+Matthijs: https://github.com/263782 <br>
 Robbe: https://github.com/RobbeLee 
