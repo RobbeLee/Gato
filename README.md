@@ -8,7 +8,7 @@ There is something special aboout our liking system. The special thing is that w
 We are currently still working on the comment section, so we will keep you posted about the process. <br>
 If you want to see what we are working on, head over to the projects piece of our github and you will be able to follow what we are doing.
 
-# LINK 
+# Link
 http://25933.hosts2.ma-cloud.nl/gato/
 
 # Devs
