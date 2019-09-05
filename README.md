@@ -13,5 +13,5 @@ http://25933.hosts2.ma-cloud.nl/gato/
 
 # Devs
 Mike: https://github.com/MikeS25933 <br>
-Matthijs: https://github.com/263782 <br>
+Matthijs: https://github.com/matthijsdevelopment https://matthijsberghuis.com <br>
 Robbe: https://github.com/RobbeLee 
